@@ -5,11 +5,21 @@ import Home from "./Home";
 import Quiz from "./Quiz";
 import Results from "./Results";
 import questions from "./content/questions";
+import coins from "./content/coins";
 import { Points } from "./types";
 
 export default function App() {
-  const [questionIndex, setIndex] = useState<number | undefined>(undefined);
-  const [score, setScore] = useState<Points>({});
+  const [questionIndex, setIndex] = useState<number | undefined>(0);
+
+  const initialScore = coins.reduce(
+    (score: { [index: string]: number }, coin) => {
+      score[coin] = 0;
+      return score;
+    },
+    {}
+  );
+
+  const [score, setScore] = useState<Points>(initialScore);
 
   const startGame = () => setIndex(0);
   const nextQuestion = (points: Points) => {
@@ -17,7 +27,7 @@ export default function App() {
       score[coin] = score[coin] + points[coin];
     }, {});
     setScore(score);
-    setIndex(questionIndex == undefined ? 0 : questionIndex + 1);
+    setIndex(questionIndex === undefined ? 0 : questionIndex + 1);
   };
 
   const getContents = () => {
@@ -26,7 +36,13 @@ export default function App() {
     } else if (questionIndex === questions.length) {
       return <Results />;
     } else {
-      return <Quiz questionIndex={questionIndex} nextQuestion={nextQuestion} />;
+      return (
+        <Quiz
+          score={score}
+          questionIndex={questionIndex}
+          nextQuestion={nextQuestion}
+        />
+      );
     }
   };
 
