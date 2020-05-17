@@ -10,7 +10,7 @@ export default function Progress({ score }: { score: object }) {
             color="white"
             x={x}
             width="10"
-            height="50"
+            height={score}
             fill="currentcolor"
           />
         );
