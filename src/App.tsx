@@ -1,12 +1,21 @@
+/** @format */
+
 import React, { useState } from "react";
+import styled from "styled-components/macro";
 import "./App.css";
-import logo from "./logo.svg";
+import coins from "./content/coins";
+import questions from "./content/questions";
 import Home from "./Home";
 import Quiz from "./Quiz";
 import Results from "./Results";
-import questions from "./content/questions";
-import coins from "./content/coins";
 import { Points } from "./types";
+
+const StyledApp = styled.div`
+  text-align: left;
+  margin: 4rem auto;
+  max-width: 800px;
+  padding: 2rem;
+`;
 
 export default function App() {
   const [questionIndex, setIndex] = useState<number | undefined>(0);
@@ -25,16 +34,33 @@ export default function App() {
   const nextQuestion = (points: Points) => {
     Object.keys(points).forEach((coin) => {
       score[coin] = score[coin] + points[coin];
-    }, {});
+    });
     setScore(score);
     setIndex(questionIndex === undefined ? 0 : questionIndex + 1);
   };
+
+  function restartGame() {
+    setIndex(0);
+    setScore(initialScore);
+  }
+
+  function getWinningCoin() {
+    let winner = coins[0];
+    let winningScore = score[coins[0]];
+    coins.forEach((coin) => {
+      if (score[coin] > winningScore) {
+        winner = coin;
+        winningScore = score[coin];
+      }
+    });
+    return winner;
+  }
 
   const getContents = () => {
     if (questionIndex === undefined) {
       return <Home startGame={startGame} />;
     } else if (questionIndex === questions.length) {
-      return <Results />;
+      return <Results restartGame={restartGame} winner={getWinningCoin()} />;
     } else {
       return (
         <Quiz
@@ -46,12 +72,5 @@ export default function App() {
     }
   };
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {getContents()}
-      </header>
-    </div>
-  );
+  return <StyledApp>{getContents()}</StyledApp>;
 }

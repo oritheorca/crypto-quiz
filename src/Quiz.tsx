@@ -1,7 +1,7 @@
 import React from "react";
 import Progress from "./Progress";
+import Question from "./Question";
 import QuestionCounter from "./QuestionCounter";
-import questions from "./content/questions";
 
 export default function Quiz({
   score,
@@ -12,19 +12,10 @@ export default function Quiz({
   questionIndex: number;
   nextQuestion: (points: any) => void;
 }) {
-  const question = questions[questionIndex];
   return (
     <section>
-      <QuestionCounter />
-      <h1>{question.title}</h1>
-      {(question.answers as Array<any>).map((answer, idx) => (
-        <button
-          key={`quiz-idx-${idx}`}
-          onClick={() => nextQuestion(answer.points)}
-        >
-          {answer.answer}
-        </button>
-      ))}
+      <QuestionCounter questionIndex={questionIndex} />
+      <Question questionIndex={questionIndex} nextQuestion={nextQuestion} />
       <Progress score={score} />
     </section>
   );

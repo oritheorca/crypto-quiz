@@ -1,6 +1,8 @@
+/** @format */
+
 const questions = [
   {
-    title: "If you went back to highschool, what would be your social circle?",
+    title: "If you went back to high school, what would be your social circle?",
     answers: [
       {
         answer: "The popular kids",
@@ -32,7 +34,7 @@ const questions = [
         },
       },
       {
-        answer: "Corporage job as an MBA graduate",
+        answer: "Corporate job as an MBA graduate",
         points: {
           Ripple: 5,
           "Binance Coin": 5,
