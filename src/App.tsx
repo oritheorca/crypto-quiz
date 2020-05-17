@@ -2,23 +2,33 @@ import React, { useState } from "react";
 import "./App.css";
 import logo from "./logo.svg";
 import Home from "./Home";
-import Question from "./Question";
+import Quiz from "./Quiz";
 import Results from "./Results";
+import questions from "./content/questions";
+import { Points } from "./types";
 
 export default function App() {
-  const questions = [];
   const [questionIndex, setIndex] = useState<number | undefined>(undefined);
+  const [score, setScore] = useState<Points>({});
 
   const startGame = () => setIndex(0);
+  const nextQuestion = (points: Points) => {
+    Object.keys(points).forEach((coin) => {
+      score[coin] = score[coin] + points[coin];
+    }, {});
+    setScore(score);
+    setIndex(questionIndex == undefined ? 0 : questionIndex + 1);
+  };
+
   const getContents = () => {
     if (questionIndex === undefined) {
       return <Home startGame={startGame} />;
     } else if (questionIndex === questions.length) {
       return <Results />;
     } else {
-      return <Question />;
+      return <Quiz questionIndex={questionIndex} nextQuestion={nextQuestion} />;
     }
-  }
+  };
 
   return (
     <div className="App">

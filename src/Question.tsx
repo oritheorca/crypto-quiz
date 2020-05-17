@@ -1,7 +1,5 @@
 import React from "react";
 
-function Question() {
+export default function Question() {
   return <div className="Question">Question</div>;
 }
-
-export default Question;
