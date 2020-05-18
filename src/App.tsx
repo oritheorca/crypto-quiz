@@ -18,15 +18,12 @@ const StyledApp = styled.div`
 `;
 
 export default function App() {
-  const [questionIndex, setIndex] = useState<number | undefined>(0);
+  const [questionIndex, setIndex] = useState<number | undefined>(undefined);
 
-  const initialScore = coins.reduce(
-    (score: { [index: string]: number }, coin) => {
-      score[coin] = 0;
-      return score;
-    },
-    {}
-  );
+  const initialScore = coins.reduce((score: Points, coin) => {
+    score[coin] = 0;
+    return score;
+  }, {});
 
   const [score, setScore] = useState<Points>(initialScore);
 
