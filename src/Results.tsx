@@ -3,6 +3,8 @@
 import React from "react";
 import styled from "styled-components/macro";
 import coinImages from "./content/coinImages";
+import Progress from "./Progress";
+import { Points } from "./types";
 
 const StyledMatch = styled.p`
   font-size: 2rem;
@@ -27,18 +29,19 @@ const StyledFlexbox = styled.div`
 `;
 
 const StyledCoinImage = styled.img`
-  max-width: 80px;
+  max-width: 24px;
   height: auto;
-  margin-right: 1.6rem;
-  margin-bottom: 2rem;
+  margin: 0 0.8rem 2rem 0.8rem;
 `;
 
 export default function Results({
   restartGame,
   winner,
+  score,
 }: {
   restartGame: () => void;
   winner: string;
+  score: Points;
 }) {
   return (
     <section>
@@ -48,6 +51,7 @@ export default function Results({
         <StyledWinner>{winner}</StyledWinner>
       </StyledFlexbox>
       <StyledButton onClick={restartGame}>Replay</StyledButton>
+      <Progress score={score} />
     </section>
   );
 }

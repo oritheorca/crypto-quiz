@@ -1,16 +1,31 @@
+/** @format */
+
 import React from "react";
 import styled from "styled-components/macro";
 
+const StyledWelcomeContainer = styled.div`
+  text-align: center;
+`;
+
 const StyledWelcome = styled.h3`
+  font-size: 1.6rem;
+`;
+
+const StyledHeader = styled.h1`
   text-transform: uppercase;
+  font-size: 2.4rem;
+`;
+
+const StyledButton = styled.button`
+  font-size: 1.6rem;
 `;
 
 export default function Home({ startGame }: { startGame: () => void }) {
   return (
-    <section>
-      <StyledWelcome>Welcome to Crypto High!</StyledWelcome>
-      <div>If you were a cryptocurrency, which one would you be?</div>
-      <button onClick={startGame}>Let's find out!</button>
-    </section>
+    <StyledWelcomeContainer>
+      <StyledWelcome>Crypto High Presents:</StyledWelcome>
+      <StyledHeader>Which cryptocurrency are you?</StyledHeader>
+      <StyledButton onClick={startGame}>Take the quiz!</StyledButton>
+    </StyledWelcomeContainer>
   );
 }

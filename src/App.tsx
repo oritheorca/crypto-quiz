@@ -12,13 +12,13 @@ import { Points } from "./types";
 
 const StyledApp = styled.div`
   text-align: left;
-  margin: 4rem auto;
+  margin: 2rem auto;
   max-width: 800px;
   padding: 2rem;
 `;
 
 export default function App() {
-  const [questionIndex, setIndex] = useState<number | undefined>(undefined);
+  const [questionIndex, setIndex] = useState<number | undefined>(0);
 
   const initialScore = coins.reduce((score: Points, coin) => {
     score[coin] = 0;
@@ -57,7 +57,13 @@ export default function App() {
     if (questionIndex === undefined) {
       return <Home startGame={startGame} />;
     } else if (questionIndex === questions.length) {
-      return <Results restartGame={restartGame} winner={getWinningCoin()} />;
+      return (
+        <Results
+          restartGame={restartGame}
+          winner={getWinningCoin()}
+          score={score}
+        />
+      );
     } else {
       return (
         <Quiz

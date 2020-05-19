@@ -1,43 +1,57 @@
+/** @format */
+
 import React from "react";
 import styled from "styled-components/macro";
-import { Points } from "./types";
 import coinImages from "./content/coinImages";
+import { Points } from "./types";
 
 const StyledCoinImage = styled.img`
-  max-width: 40px;
+  max-width: 24px;
   height: auto;
-  margin-right: 1.6rem;
+  margin: 0 0.4rem 2rem 0.4rem;
   margin-bottom: 2rem;
+`;
+
+const StyledFlexbox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const StyledProgress = styled.div`
+  display: flex;
+`;
+
+const StyledProgressBar = styled.rect`
+  transition: height 0.2s ease-in-out;
 `;
 
 export default function Progress({ score }: { score: Points }) {
   return (
-    <section>
-      <svg height="100px" width="100%">
-        {Object.keys(score).map((coin, idx) => {
-          const x = idx * 20;
-          return (
-            <rect
-              key={`rect-${idx}`}
-              color="black"
-              x={x}
-              width="10"
-              // height={score[coin]}
-              height={idx * 10}
-              fill="currentcolor"
-            />
-          );
-        })}
-      </svg>
+    <StyledProgress>
       {Object.keys(score).map((coin, idx) => {
+        const coinScore = score[coin];
         return (
-          <StyledCoinImage
-            key={`coin-img-${idx}`}
-            src={coinImages[coin]}
-            alt={coin}
-          />
+          <StyledFlexbox>
+            <svg width={24} height={112} transform="scale(1,-1)">
+              <StyledProgressBar
+                key={`rect-${idx}`}
+                x={7}
+                y={10}
+                width="10"
+                height={coinScore}
+                fill="black"
+              />
+            </svg>
+            <StyledCoinImage
+              key={`coin-img-${idx}`}
+              src={coinImages[coin]}
+              alt={coin}
+            />
+          </StyledFlexbox>
         );
       })}
-    </section>
+    </StyledProgress>
   );
 }
