@@ -15,15 +15,54 @@ const questions = [
       {
         answer: "A nerdy kid.",
         points: {
-          Ethereum: 4,
+          Ethereum: 3,
           Zcash: 4,
+          "Bitcoin Cash": 2,
         },
       },
       {
         answer: "The class clown.",
         points: {
           Dogecoin: 4,
-          Ripple: 2,
+        },
+      },
+      {
+        answer: "A bully.",
+        points: {
+          Ripple: 4,
+        },
+      },
+    ],
+  },
+  {
+    title: "In the yearbook, you were voted most likely to...",
+    answers: [
+      {
+        answer: "Become the CEO of a famous company.",
+        points: {
+          "Binance Coin": 4,
+          Libra: 3,
+        },
+      },
+      {
+        answer: "Succeed as a tech entrepreneur.",
+        points: {
+          Ethereum: 3,
+          "Binance Coin": 3,
+          Ripple: 3,
+        },
+      },
+      {
+        answer: "Become a famous YouTuber.",
+        points: {
+          Dogecoin: 4,
+        },
+      },
+      {
+        answer: "Live a self-sufficient lifestyle on a farm.",
+        points: {
+          Bitcoin: 4,
+          "Bitcoin Cash": 4,
         },
       },
     ],
@@ -35,61 +74,21 @@ const questions = [
         answer: "The latest iPhone. Apple all the way.",
         points: {
           Bitcoin: 4,
-          Libra: 4,
+          Libra: 3,
         },
       },
       {
-        answer:
-          "A Google Pixel - it has the best balance between premium hardware and price.",
-        points: {
-          Ethereum: 4,
-        },
-      },
-      {
-        answer:
-          "A OnePlus - it has the right balance of price tag, features, and customizability",
-        points: {
-          "Bitcoin Cash": 3,
-          "Binance Coin": 3,
-        },
-      },
-      {
-        answer: "An indie phone on Kickstarter. That flip phone tho...",
-        points: {
-          Dogecoin: 3,
-          Zcash: 4,
-        },
-      },
-    ],
-  },
-  {
-    title: "In the yearbook, you were voted most likely to...",
-    answers: [
-      {
-        answer: "Successfully climb the corporate ladder.",
-        points: {
-          "Binance Coin": 4,
-          Libra: 4,
-          Ripple: 4,
-        },
-      },
-      {
-        answer: "Own your own small business.",
+        answer: "The new Google Pixel. iOS just isn't for me.",
         points: {
           Ethereum: 3,
+          "Bitcoin Cash": 3,
         },
       },
       {
-        answer: "Become a world famous entertainer.",
+        answer: "No thanks. I'll continue using my non-smart phone.",
         points: {
-          Dogecoin: 4,
-        },
-      },
-      {
-        answer: "Live fully independently on a farm.",
-        points: {
-          Bitcoin: 4,
-          "Bitcoin Cash": 4,
+          Dogecoin: 5,
+          Zcash: 5,
         },
       },
     ],
@@ -99,10 +98,9 @@ const questions = [
       "You're asked to organize the school fundraiser. How would you do it?",
     answers: [
       {
-        answer:
-          "I would appoint myself or someone else I trust to oversee everything",
+        answer: "As benevolent dictator, I would oversee everything.",
         points: {
-          Ethereum: 3,
+          Ethereum: 2,
           Ripple: 4,
           "Binance Coin": 4,
         },
@@ -118,7 +116,7 @@ const questions = [
       },
       {
         answer:
-          "I would procrastinate until the day before and hope that everything turns alright.",
+          "I would procrastinate and hope that everything turns out alright.",
         points: {
           Dogecoin: 3,
         },
@@ -127,11 +125,11 @@ const questions = [
   },
   {
     title:
-      "There was a bomb threat in your school. What's the correct course of action?",
+      "There was a bomb threat in your school. What's the correct way to handle the situation?",
     answers: [
       {
         answer:
-          "Confiscate every student's phone and investage everyone's internet usage.",
+          "Confiscate every student's phone and investage everyone's messaging history.",
         points: {
           "Binance Coin": 3,
           Ripple: 3,
@@ -145,9 +143,9 @@ const questions = [
       },
       {
         answer:
-          "Confiscating student phones is government overreach. It's not acceptable under any circumstance.",
+          "Privacy is a human right, even in extreme circumstances. Every student has a right to privacy.",
         points: {
-          Zcash: 5,
+          Zcash: 6,
           Ethereum: 3,
         },
       },
