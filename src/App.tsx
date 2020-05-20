@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
+import { createGlobalStyle } from "styled-components";
 import styled from "styled-components/macro";
 import "./App.css";
 import coins from "./content/coins";
@@ -9,6 +10,19 @@ import Home from "./Home";
 import Quiz from "./Quiz";
 import Results from "./Results";
 import { Points } from "./types";
+import { colors } from "./ui";
+
+const WhiteboardBorder = createGlobalStyle`
+  body {
+    border: 8px solid ${colors.gray};
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-y: scroll;
+  }
+`;
 
 const StyledApp = styled.div`
   text-align: left;
@@ -75,5 +89,10 @@ export default function App() {
     }
   };
 
-  return <StyledApp>{getContents()}</StyledApp>;
+  return (
+    <StyledApp>
+      <WhiteboardBorder />
+      {getContents()}
+    </StyledApp>
+  );
 }
