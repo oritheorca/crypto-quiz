@@ -11,8 +11,10 @@ const StyledQuestion = styled.h1`
 
 const StyledAnswer = styled.button`
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
+  text-align: left;
   cursor: pointer;
+  border: none;
 `;
 
 export default function Question({
