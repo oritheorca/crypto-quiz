@@ -29,7 +29,7 @@ const StyledFlexbox = styled.div`
 `;
 
 const StyledCoinImage = styled.img`
-  max-width: 24px;
+  max-width: 120px;
   height: auto;
   margin: 0 0.8rem 2rem 0.8rem;
 `;
@@ -45,13 +45,13 @@ export default function Results({
 }) {
   return (
     <section>
-      <StyledMatch>You are:</StyledMatch>
+      <StyledMatch>You are...</StyledMatch>
+      <Progress score={score} />
       <StyledFlexbox>
         <StyledCoinImage src={coinImages[winner]} alt={winner} />
         <StyledWinner>{winner}</StyledWinner>
       </StyledFlexbox>
       <StyledButton onClick={restartGame}>Replay</StyledButton>
-      <Progress score={score} />
     </section>
   );
 }

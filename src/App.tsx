@@ -14,20 +14,23 @@ import { colors } from "./ui";
 
 const WhiteboardBorder = createGlobalStyle`
   body {
-    border: 8px solid ${colors.gray};
     width: 100%;
     height: 100%;
     min-height: 100vh;
     margin: 0;
+    border: 4px solid ${colors.gray};
     box-sizing: border-box;
     overflow-y: scroll;
   }
 `;
 
 const StyledApp = styled.div`
+  border: 8px solid ${colors.lightGray};
   text-align: left;
-  margin: 2rem auto;
   max-width: 800px;
+  height: 100%;
+  min-height: calc(100vh - 8px);
+  box-sizing: border-box;
   padding: 2rem;
 `;
 
