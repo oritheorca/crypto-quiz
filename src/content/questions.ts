@@ -7,23 +7,23 @@ const questions = [
       {
         answer: "One of the popular kids.",
         points: {
-          Libra: 7,
-          "Binance Coin": 7,
-          Bitcoin: 4,
+          Libra: 3,
+          "Binance Coin": 3,
+          Bitcoin: 3,
         },
       },
       {
         answer: "A nerdy kid.",
         points: {
-          Ethereum: 7,
-          Zcash: 7,
+          Ethereum: 4,
+          Zcash: 4,
         },
       },
       {
         answer: "The class clown.",
         points: {
-          Dogecoin: 10,
-          Ripple: 7,
+          Dogecoin: 4,
+          Ripple: 2,
         },
       },
     ],
@@ -34,31 +34,30 @@ const questions = [
       {
         answer: "The latest iPhone. Apple all the way.",
         points: {
-          Bitcoin: 10,
-          Libra: 7,
-          Ethereum: 5,
+          Bitcoin: 4,
+          Libra: 4,
         },
       },
       {
         answer:
           "A Google Pixel - it has the best balance between premium hardware and price.",
         points: {
-          Ethereum: 10,
+          Ethereum: 4,
         },
       },
       {
         answer:
           "A OnePlus - it has the right balance of price tag, features, and customizability",
         points: {
-          "Bitcoin Cash": 5,
-          "Binance Coin": 5,
+          "Bitcoin Cash": 3,
+          "Binance Coin": 3,
         },
       },
       {
         answer: "An indie phone on Kickstarter. That flip phone tho...",
         points: {
-          Dogecoin: 10,
-          Zcash: 5,
+          Dogecoin: 3,
+          Zcash: 4,
         },
       },
     ],
@@ -69,29 +68,28 @@ const questions = [
       {
         answer: "Successfully climb the corporate ladder.",
         points: {
-          "Binance Coin": 10,
-          Libra: 10,
-          Ripple: 10,
+          "Binance Coin": 4,
+          Libra: 4,
+          Ripple: 4,
         },
       },
       {
         answer: "Own your own small business.",
         points: {
-          Ethereum: 7,
-          Dogecoin: 5,
+          Ethereum: 3,
         },
       },
       {
         answer: "Become a world famous entertainer.",
         points: {
-          Dogecoin: 10,
+          Dogecoin: 4,
         },
       },
       {
         answer: "Live fully independently on a farm.",
         points: {
-          Bitcoin: 10,
-          "Bitcoin Cash": 5,
+          Bitcoin: 4,
+          "Bitcoin Cash": 4,
         },
       },
     ],
@@ -104,21 +102,25 @@ const questions = [
         answer:
           "I would appoint myself or someone else I trust to oversee everything",
         points: {
-          Ethereum: 10,
+          Ethereum: 3,
+          Ripple: 4,
+          "Binance Coin": 4,
         },
       },
       {
         answer:
           "I would setup a committee to manage the event and assign different tasks to different people.",
         points: {
-          Libra: 10,
+          Libra: 2,
+          Bitcoin: 4,
+          "Bitcoin Cash": 3,
         },
       },
       {
         answer:
           "I would procrastinate until the day before and hope that everything turns alright.",
         points: {
-          Dogecoin: 10,
+          Dogecoin: 3,
         },
       },
     ],
@@ -131,23 +133,22 @@ const questions = [
         answer:
           "Confiscate every student's phone and investage everyone's internet usage.",
         points: {
-          Libra: 5,
-          "Binance Coin": 10,
-          Ripple: 10,
+          "Binance Coin": 3,
+          Ripple: 3,
         },
       },
       {
         answer: "Confiscate phones if there's proof beyond a reasonable doubt.",
         points: {
-          Libra: 5,
+          Libra: 3,
         },
       },
       {
         answer:
           "Confiscating student phones is government overreach. It's not acceptable under any circumstance.",
         points: {
-          Zcash: 10,
-          Ethereum: 5,
+          Zcash: 5,
+          Ethereum: 3,
         },
       },
     ],
