@@ -13,51 +13,23 @@ const questions = [
         },
       },
       {
-        answer: "A nerdy kid.",
+        answer: "Always hanging out in the computer lab.",
         points: {
-          Ethereum: 4,
+          Ethereum: 3,
           Zcash: 4,
+          "Bitcoin Cash": 2,
         },
       },
       {
-        answer: "The class clown.",
+        answer: "Making everyone laugh as the class clown.",
         points: {
           Dogecoin: 4,
-          Ripple: 2,
-        },
-      },
-    ],
-  },
-  {
-    title: "Time to upgrade your phone! What would you go for?",
-    answers: [
-      {
-        answer: "The latest iPhone. Apple all the way.",
-        points: {
-          Bitcoin: 4,
-          Libra: 4,
         },
       },
       {
-        answer:
-          "A Google Pixel - it has the best balance between premium hardware and price.",
+        answer: "Bullying the nerds at recess.",
         points: {
-          Ethereum: 4,
-        },
-      },
-      {
-        answer:
-          "A OnePlus - it has the right balance of price tag, features, and customizability",
-        points: {
-          "Bitcoin Cash": 3,
-          "Binance Coin": 3,
-        },
-      },
-      {
-        answer: "An indie phone on Kickstarter. That flip phone tho...",
-        points: {
-          Dogecoin: 3,
-          Zcash: 4,
+          Ripple: 4,
         },
       },
     ],
@@ -66,30 +38,58 @@ const questions = [
     title: "In the yearbook, you were voted most likely to...",
     answers: [
       {
-        answer: "Successfully climb the corporate ladder.",
+        answer: "Become the CEO of a Fortune 500 company.",
         points: {
           "Binance Coin": 4,
-          Libra: 4,
-          Ripple: 4,
+          Libra: 3,
         },
       },
       {
-        answer: "Own your own small business.",
+        answer: "Found a successful company.",
         points: {
           Ethereum: 3,
+          "Binance Coin": 3,
+          Ripple: 3,
         },
       },
       {
-        answer: "Become a world famous entertainer.",
+        answer: "Become a famous YouTuber.",
         points: {
           Dogecoin: 4,
         },
       },
       {
-        answer: "Live fully independently on a farm.",
+        answer: "Live on a farm and grow your own food.",
         points: {
           Bitcoin: 4,
           "Bitcoin Cash": 4,
+        },
+      },
+    ],
+  },
+  {
+    title: "Time for a new phone! What would you go for?",
+    answers: [
+      {
+        answer: "The latest iPhone. Can't live without iMessage!",
+        points: {
+          Bitcoin: 4,
+          Libra: 3,
+        },
+      },
+      {
+        answer:
+          "The new Google Pixel. The reviewers say the specs are better...",
+        points: {
+          Ethereum: 3,
+          "Bitcoin Cash": 3,
+        },
+      },
+      {
+        answer: "No thanks. I'm not brainwashed by consumerism.",
+        points: {
+          Dogecoin: 5,
+          Zcash: 5,
         },
       },
     ],
@@ -99,17 +99,15 @@ const questions = [
       "You're asked to organize the school fundraiser. How would you do it?",
     answers: [
       {
-        answer:
-          "I would appoint myself or someone else I trust to oversee everything",
+        answer: "Do it all myself. It's just easier that way.",
         points: {
-          Ethereum: 3,
+          Ethereum: 2,
           Ripple: 4,
           "Binance Coin": 4,
         },
       },
       {
-        answer:
-          "I would setup a committee to manage the event and assign different tasks to different people.",
+        answer: "Set up a committee and share responsibilities.",
         points: {
           Libra: 2,
           Bitcoin: 4,
@@ -117,8 +115,7 @@ const questions = [
         },
       },
       {
-        answer:
-          "I would procrastinate until the day before and hope that everything turns alright.",
+        answer: "Procrastinate and hope that everything turns out alright.",
         points: {
           Dogecoin: 3,
         },
@@ -127,27 +124,25 @@ const questions = [
   },
   {
     title:
-      "There was a bomb threat in your school. What's the correct course of action?",
+      "Bomb threat! Should the police be able to read students' private messages?",
     answers: [
       {
-        answer:
-          "Confiscate every student's phone and investage everyone's internet usage.",
+        answer: "Yes. Safety trumps the individual right to privacy.",
         points: {
           "Binance Coin": 3,
           Ripple: 3,
         },
       },
       {
-        answer: "Confiscate phones if there's proof beyond a reasonable doubt.",
+        answer: "Only if there's evidence beyond a reasonable doubt.",
         points: {
           Libra: 3,
         },
       },
       {
-        answer:
-          "Confiscating student phones is government overreach. It's not acceptable under any circumstance.",
+        answer: "No. That's a hard line that shouldn't be crossed.",
         points: {
-          Zcash: 5,
+          Zcash: 6,
           Ethereum: 3,
         },
       },
