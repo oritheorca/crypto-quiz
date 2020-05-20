@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import questions from "./content/questions";
 
 const StyledQuestionCounter = styled.h2`
   font-size: 1.2rem;
@@ -15,7 +16,7 @@ export default function QuestionCounter({
 }) {
   return (
     <StyledQuestionCounter>
-      Question {questionIndex + 1} of 10
+      Question {questionIndex + 1} of {questions.length}
     </StyledQuestionCounter>
   );
 }
