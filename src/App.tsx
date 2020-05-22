@@ -5,7 +5,7 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components/macro";
 import "./App.css";
 import coins from "./content/coins";
-import questions from "./content/questions";
+import questions, { getMaxScore } from "./content/questions";
 import Home from "./Home";
 import Quiz from "./Quiz";
 import Results from "./Results";
@@ -18,7 +18,6 @@ const WhiteboardBorder = createGlobalStyle`
     height: 100%;
     min-height: 100vh;
     margin: 0;
-    border: 4px solid ${colors.gray};
     box-sizing: border-box;
     overflow-y: scroll;
   }
@@ -29,9 +28,30 @@ const StyledApp = styled.div`
   text-align: left;
   max-width: 800px;
   height: 100%;
-  min-height: calc(100vh - 8px);
+  min-height: 100vh;
   box-sizing: border-box;
-  padding: 2rem;
+  margin: 0 auto;
+  display: relative;
+
+  @media (min-width: 800px) {
+    min-height: 0;
+    height: 600px;
+    max-height: 600px;
+    margin-top: 2rem;
+  }
+`;
+
+const StyledBorder = styled.div`
+  border: 8px solid ${colors.gray};
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 16px);
+  box-sizing: border-box;
+  padding: 1.2rem;
+  @media (min-width: 800px) {
+    min-height: 0;
+    padding: 2rem 4rem;
+  }
 `;
 
 export default function App() {
@@ -92,10 +112,14 @@ export default function App() {
     }
   };
 
+  console.log(getMaxScore());
+
   return (
     <StyledApp>
-      <WhiteboardBorder />
-      {getContents()}
+      <StyledBorder>
+        <WhiteboardBorder />
+        {getContents()}
+      </StyledBorder>
     </StyledApp>
   );
 }

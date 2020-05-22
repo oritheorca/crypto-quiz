@@ -1,5 +1,28 @@
 /** @format */
 
+// Get the maximum score achievable across all coins.
+export function getMaxScore() {
+  const maxPerCoin: { [coin: string]: number } = {
+    "Binance Coin": 0,
+    Bitcoin: 0,
+    "Bitcoin Cash": 0,
+    Dogecoin: 0,
+    Ethereum: 0,
+    Libra: 0,
+    Ripple: 0,
+    Zcash: 0,
+  };
+
+  questions.forEach((q) => {
+    q.answers.forEach((answer: any) => {
+      const { points } = answer;
+      Object.keys(points).forEach((coin) => (maxPerCoin[coin] += points[coin]));
+    });
+  });
+
+  return Math.max(...Object.values(maxPerCoin));
+}
+
 const questions = [
   {
     title: "If you went back to high school, you would be...",
@@ -45,7 +68,7 @@ const questions = [
         },
       },
       {
-        answer: "Found a successful company.",
+        answer: "Found a successful startup.",
         points: {
           Ethereum: 3,
           "Binance Coin": 3,
@@ -95,8 +118,7 @@ const questions = [
     ],
   },
   {
-    title:
-      "You're asked to organize the school fundraiser. How would you do it?",
+    title: "You're asked to organize a fundraiser. How do you go about it?",
     answers: [
       {
         answer: "Do it all myself. It's just easier that way.",

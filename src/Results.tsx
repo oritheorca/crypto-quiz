@@ -6,6 +6,10 @@ import coinImages from "./content/coinImages";
 import Progress from "./Progress";
 import { Points } from "./types";
 
+const StyledResults = styled.section`
+  text-align: center;
+`;
+
 const StyledMatch = styled.p`
   font-size: 2rem;
   margin-bottom: 0;
@@ -44,7 +48,7 @@ export default function Results({
   score: Points;
 }) {
   return (
-    <section>
+    <StyledResults>
       <StyledMatch>You are...</StyledMatch>
       <Progress score={score} />
       <StyledFlexbox>
@@ -52,6 +56,6 @@ export default function Results({
         <StyledWinner>{winner}</StyledWinner>
       </StyledFlexbox>
       <StyledButton onClick={restartGame}>Replay</StyledButton>
-    </section>
+    </StyledResults>
   );
 }

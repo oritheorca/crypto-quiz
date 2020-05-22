@@ -1,7 +1,6 @@
 import React from "react";
 import Progress from "./Progress";
 import Question from "./Question";
-import QuestionCounter from "./QuestionCounter";
 import { Points } from "./types";
 
 export default function Quiz({
@@ -15,7 +14,6 @@ export default function Quiz({
 }) {
   return (
     <section>
-      <QuestionCounter questionIndex={questionIndex} />
       <Question questionIndex={questionIndex} nextQuestion={nextQuestion} />
       <Progress score={score} />
     </section>

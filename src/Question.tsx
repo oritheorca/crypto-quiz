@@ -8,6 +8,8 @@ import { colors } from "./ui";
 const StyledQuestion = styled.h1`
   font-size: 1.6rem;
   text-transform: uppercase;
+  margin-bottom: 2rem;
+  height: 120px;
 `;
 
 const StyledAnswer = styled.button`
@@ -19,7 +21,7 @@ const StyledAnswer = styled.button`
   display: flex;
   align-items: center;
   padding: 0;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
 `;
 
 const StyledDot = styled.div`
@@ -27,7 +29,7 @@ const StyledDot = styled.div`
   min-height: 1rem;
   border-radius: 50%;
   background-color: ${colors.red};
-  margin-right: 1.2rem;
+  margin-right: 2rem;
 `;
 
 export default function Question({
