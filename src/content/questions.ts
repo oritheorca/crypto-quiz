@@ -91,6 +91,57 @@ const questions = [
     ],
   },
   {
+    title: "Where in the classroom do you like to sit?",
+    answers: [
+      {
+        answer:
+          "All the way in the back. I want to nap without getting caught...",
+        points: {
+          Dogecoin: 4,
+        },
+      },
+      {
+        answer: "I always sit in the front of the class.",
+        points: {
+          Libra: 3,
+          "Binance Coin": 3,
+        },
+      },
+      {
+        answer: "Depends on where my friends are sitting.",
+        points: {
+          Ethereum: 3,
+        },
+      },
+    ],
+  },
+  {
+    title:
+      "Bomb threat! Should the police be able to read students' private messages?",
+    answers: [
+      {
+        answer: "Yes. Safety trumps the individual right to privacy.",
+        points: {
+          "Binance Coin": 3,
+          Ripple: 3,
+        },
+      },
+      {
+        answer: "Only if there's evidence beyond a reasonable doubt.",
+        points: {
+          Libra: 3,
+        },
+      },
+      {
+        answer: "No. That's a hard line that shouldn't be crossed.",
+        points: {
+          Zcash: 6,
+          Ethereum: 3,
+        },
+      },
+    ],
+  },
+  {
     title: "Time for a new phone! What would you go for?",
     answers: [
       {
@@ -145,27 +196,109 @@ const questions = [
     ],
   },
   {
-    title:
-      "Bomb threat! Should the police be able to read students' private messages?",
+    title: "You have your final exams coming up. How do you prepare?",
     answers: [
       {
-        answer: "Yes. Safety trumps the individual right to privacy.",
+        answer: "Procrastinate until the last moment.",
         points: {
-          "Binance Coin": 3,
-          Ripple: 3,
+          Zcash: 3,
         },
       },
       {
-        answer: "Only if there's evidence beyond a reasonable doubt.",
+        answer: "I make a detailed study plan.",
+        points: {
+          Libra: 3,
+        },
+      },
+    ],
+  },
+  {
+    title: "You would be most hurt if someone called you...",
+    answers: [
+      {
+        answer: "Boring",
+        points: {
+          Dogecoin: 4,
+          Ethereum: 2,
+        },
+      },
+      {
+        answer: "Unreliable",
+        points: {
+          Bitcoin: 4,
+          "Binance Coin": 2,
+        },
+      },
+      {
+        answer: "Immoral",
+        points: {
+          Zcash: 4,
+        },
+      },
+      {
+        answer: "Failure",
+        points: {
+          Libra: 4,
+          "Bitcoin Cash": 2,
+        },
+      },
+    ],
+  },
+  {
+    title: "What's your most visited website this week?",
+    answers: [
+      {
+        answer: "Google Mail",
+        points: {
+          Ripple: 3,
+          "Binance Coin": 3,
+        },
+      },
+      {
+        answer: "Facebook",
         points: {
           Libra: 3,
         },
       },
       {
-        answer: "No. That's a hard line that shouldn't be crossed.",
+        answer: "YouTube",
         points: {
-          Zcash: 6,
+          Dogecoin: 3,
+        },
+      },
+      {
+        answer: "Reddit",
+        points: {
           Ethereum: 3,
+          Bitcoin: 3,
+        },
+      },
+    ],
+  },
+  {
+    title: "Pick your favorite movie.",
+    answers: [
+      {
+        answer: "The Matrix",
+        points: {
+          Bitcoin: 5,
+          "Bitcoin Cash": 3,
+          Ethereum: 3,
+        },
+      },
+      {
+        answer: "The Wolf of Wall Street",
+        points: {
+          Ripple: 5,
+          Dogecoin: 3,
+          "Binance Coin": 5,
+        },
+      },
+      {
+        answer: "Lord of the Rings",
+        points: {
+          Libra: 4,
+          Zcash: 2,
         },
       },
     ],
