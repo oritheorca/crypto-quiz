@@ -4,7 +4,7 @@ import btc from "./images/btc.png";
 import dog from "./images/dog.png";
 import eth from "./images/eth.png";
 import lib from "./images/lib.png";
-import xrp from "./images/xrp.png";
+import ripple from "./images/ripple.jpg";
 import zec from "./images/zec.png";
 
 const coinImages: { [name: string]: string } = {
@@ -14,7 +14,7 @@ const coinImages: { [name: string]: string } = {
   Dogecoin: dog,
   Ethereum: eth,
   Libra: lib,
-  Ripple: xrp,
+  Ripple: ripple,
   Zcash: zec,
 };
 
