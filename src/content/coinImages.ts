@@ -1,11 +1,11 @@
-import bch from "./images/bch.png";
-import bnb from "./images/bnb.png";
-import btc from "./images/btc.png";
-import dog from "./images/dog.png";
-import eth from "./images/eth.png";
-import lib from "./images/lib.png";
-import ripple from "./images/ripple.jpg";
-import zec from "./images/zec.png";
+import bch from "./images/icons/bch.png";
+import bnb from "./images/icons/bnb.png";
+import btc from "./images/icons/btc.png";
+import dog from "./images/icons/dog.png";
+import eth from "./images/icons/eth.png";
+import lib from "./images/icons/lib.png";
+import ripple from "./images/icons/ripple.jpg";
+import zec from "./images/icons/zec.png";
 
 const coinImages: { [name: string]: string } = {
   "Binance Coin": bnb,

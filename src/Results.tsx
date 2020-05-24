@@ -12,6 +12,7 @@ const StyledResults = styled.section`
 
 const StyledMatch = styled.p`
   font-size: 2rem;
+  margin-top: 0;
   margin-bottom: 0;
 `;
 

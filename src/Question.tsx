@@ -3,13 +3,20 @@
 import React from "react";
 import styled from "styled-components/macro";
 import questions from "./content/questions";
+import QuestionCounter from "./QuestionCounter";
 import { colors } from "./ui";
 
 const StyledQuestion = styled.h1`
   font-size: 1.6rem;
   text-transform: uppercase;
   margin-bottom: 2rem;
-  height: 120px;
+  color: ${colors.red};
+  min-height: 92px;
+
+  @media (min-width: 1000px) {
+    margin-bottom: 3rem;
+    font-size: 2.4rem;
+  }
 `;
 
 const StyledAnswer = styled.button`
@@ -22,6 +29,11 @@ const StyledAnswer = styled.button`
   align-items: center;
   padding: 0;
   margin-bottom: 2rem;
+
+  @media (min-width: 1000px) {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+  }
 `;
 
 const StyledDot = styled.div`
@@ -42,6 +54,7 @@ export default function Question({
   const question = questions[questionIndex];
   return (
     <React.Fragment>
+      <QuestionCounter questionIndex={questionIndex} />
       <StyledQuestion>{question.title}</StyledQuestion>
       {(question.answers as Array<any>).map((answer, idx) => (
         <StyledAnswer

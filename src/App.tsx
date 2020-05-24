@@ -5,7 +5,7 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components/macro";
 import "./App.css";
 import coins from "./content/coins";
-import questions, { getMaxScore } from "./content/questions";
+import questions from "./content/questions";
 import Home from "./Home";
 import Quiz from "./Quiz";
 import Results from "./Results";
@@ -24,34 +24,37 @@ const WhiteboardBorder = createGlobalStyle`
 `;
 
 const StyledApp = styled.div`
-  border: 8px solid ${colors.lightGray};
+  border: 8px solid ${colors.gray};
+  border-radius: 12px;
   text-align: left;
-  max-width: 800px;
+  max-width: 1000px;
   height: 100%;
   min-height: 100vh;
   box-sizing: border-box;
   margin: 0 auto;
-  display: relative;
+  position: relative;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1000px) {
     min-height: 0;
-    height: 600px;
-    max-height: 600px;
+    height: 760px;
+    max-height: 760px;
     margin-top: 2rem;
   }
 `;
 
 const StyledBorder = styled.div`
-  border: 8px solid ${colors.gray};
+  border: 8px solid ${colors.lightGray};
   width: 100%;
   height: 100%;
   min-height: calc(100vh - 16px);
   box-sizing: border-box;
   padding: 1.2rem;
-  @media (min-width: 800px) {
+  @media (min-width: 1000px) {
     min-height: 0;
     padding: 2rem 4rem;
   }
+  position: relative;
+  overflow: hidden;
 `;
 
 export default function App() {
@@ -74,7 +77,7 @@ export default function App() {
   };
 
   function restartGame() {
-    setIndex(0);
+    setIndex(undefined);
     setScore(initialScore);
   }
 
@@ -111,8 +114,6 @@ export default function App() {
       );
     }
   };
-
-  console.log(getMaxScore());
 
   return (
     <StyledApp>

@@ -5,7 +5,7 @@ import styled from "styled-components/macro";
 import coinImages from "./content/coinImages";
 import { getMaxScore } from "./content/questions";
 import { Points } from "./types";
-import { colors } from "./ui";
+import { coinColors } from "./ui";
 
 const StyledProgress = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const StyledProgress = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 60px;
+    bottom: 20px;
   }
 `;
 
@@ -24,6 +24,7 @@ const StyledCoinImage = styled.img`
   height: auto;
   margin: 0 0.4rem 2rem 0.4rem;
   margin-bottom: 1.6rem;
+  opacity: 0.7;
 `;
 
 const StyledFlexbox = styled.div`
@@ -34,7 +35,7 @@ const StyledFlexbox = styled.div`
 `;
 
 const StyledProgressBar = styled.rect`
-  transition: height 0.2s ease-in-out;
+  transition: height 0.5s ease-in-out;
 `;
 
 export default function Progress({ score }: { score: Points }) {
@@ -53,7 +54,7 @@ export default function Progress({ score }: { score: Points }) {
                 y={10}
                 width="24"
                 height={(coinScore / getMaxScore()) * height}
-                fill={colors.red}
+                fill={coinColors[coin]}
               />
             </svg>
             <StyledCoinImage
