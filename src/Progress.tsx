@@ -10,11 +10,13 @@ import { coinColors } from "./ui";
 const StyledProgress = styled.div`
   display: flex;
   justify-content: center;
+  position: absolute;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
 
   @media (min-width: 800px) {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     bottom: 20px;
   }
 `;

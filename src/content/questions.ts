@@ -116,8 +116,7 @@ const questions = [
     ],
   },
   {
-    title:
-      "Bomb threat! Should the police be able to read students' private messages?",
+    title: "Bomb threat! Should the police be able to read students' texts?",
     answers: [
       {
         answer: "Yes. Safety trumps the individual right to privacy.",
@@ -236,7 +235,7 @@ const questions = [
         },
       },
       {
-        answer: "Failure",
+        answer: "A failure",
         points: {
           Libra: 4,
           "Bitcoin Cash": 2,
@@ -248,7 +247,7 @@ const questions = [
     title: "What's your most visited website this week?",
     answers: [
       {
-        answer: "Google Mail",
+        answer: "Gmail",
         points: {
           Ripple: 3,
           "Binance Coin": 3,
@@ -276,7 +275,7 @@ const questions = [
     ],
   },
   {
-    title: "Pick your favorite movie.",
+    title: "What's your favorite movie?",
     answers: [
       {
         answer: "The Matrix",

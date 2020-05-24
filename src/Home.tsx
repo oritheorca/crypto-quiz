@@ -102,7 +102,7 @@ const StyledSilhouetteBitcoin = styled.img`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 160px;
+  bottom: 8rem;
   width: 140px;
   filter: brightness(-100%);
   display: block;
@@ -115,17 +115,25 @@ const StyledSilhouetteBitcoin = styled.img`
 const StyledMarker = styled.img`
   position: absolute;
   right: 200px;
-  bottom: -78px;
+  bottom: -52px;
   transform: rotate(-88deg);
-  height: 180px;
+  height: 120px;
+
+  @media (min-width: 800px) {
+    height: 180px;
+  }
 `;
 
 const StyledEraser = styled.img`
   position: absolute;
   left: 170px;
   bottom: -8px;
-  width: 160px;
+  width: 120px;
   transform: rotate(10deg);
+
+  @media (min-width: 800px) {
+    width: 180px;
+  }
 `;
 
 export default function Home({ startGame }: { startGame: () => void }) {
