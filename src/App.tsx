@@ -20,11 +20,13 @@ const WhiteboardBorder = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     overflow-y: scroll;
+    background-color: ${colors.blue};
   }
 `;
 
 const StyledApp = styled.div`
   border: 8px solid ${colors.gray};
+  background-color: white;
   border-radius: 12px;
   text-align: left;
   max-width: 1000px;

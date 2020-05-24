@@ -9,7 +9,7 @@ const coins = [
   "Zcash",
 ];
 
-const descriptions = {
+export const descriptions: { [coin: string]: string } = {
   Bitcoin:
     "You're the dependable class teacher. Bitcoin is the one cryptocurrency that everyone has heard about. Although it's simple compared to the newer cryptocurrencies, Bitcoin has a reputation for being the most reliable and easiest to understand. Nowadays, Bitcoin is marketed as digital gold: an alternative store of money.",
 

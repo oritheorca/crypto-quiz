@@ -115,7 +115,7 @@ const StyledSilhouetteBitcoin = styled.img`
 const StyledMarker = styled.img`
   position: absolute;
   right: 200px;
-  bottom: -52px;
+  bottom: -79px;
   transform: rotate(-88deg);
   height: 120px;
 

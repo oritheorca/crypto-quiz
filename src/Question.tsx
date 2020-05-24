@@ -2,7 +2,6 @@
 
 import React from "react";
 import styled from "styled-components/macro";
-import magnetImages from "./content/images/illos/magnets/magnetImages";
 import questions from "./content/questions";
 import QuestionCounter from "./QuestionCounter";
 import { colors } from "./ui";
@@ -37,9 +36,11 @@ const StyledAnswer = styled.button`
   }
 `;
 
-const StyledMagnet = styled.img`
-  width: 1.6rem;
-  height: 1.6rem;
+const StyledMagnet = styled.div`
+  width: 1.2rem;
+  height: 1.2rem;
+  background: ${colors.red};
+  border-radius: 50%;
   margin-right: 1rem;
 `;
 
@@ -60,7 +61,7 @@ export default function Question({
           key={`quiz-idx-${idx}`}
           onClick={() => nextQuestion(answer.points)}
         >
-          <StyledMagnet src={magnetImages[idx % magnetImages.length]} />
+          <StyledMagnet />
           <div>{answer.answer}</div>
         </StyledAnswer>
       ))}
