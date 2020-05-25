@@ -1,8 +1,8 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { FaLink } from "react-icons/fa";
+import { FaCheck, FaLink } from "react-icons/fa";
 import { MdRefresh } from "react-icons/md";
 import {
   FacebookIcon,
@@ -11,11 +11,9 @@ import {
   TwitterShareButton,
 } from "react-share";
 import styled from "styled-components/macro";
-import coinIllos from "./content/coinIllos";
-import { coinLogos } from "./content/coinImages";
-import { descriptions } from "./content/coins";
-import Progress from "./Progress";
-import { getQuote, hashtags, related, shareUrl } from "./sms";
+import { coinIcons, coinIllos, coinLogos } from "./content/coinImages";
+import coins, { descriptions, nicknames } from "./content/coins";
+import { getQuote, getTwitterText, hashtags, related, shareUrl } from "./sms";
 import { Points } from "./types";
 import { colors } from "./ui";
 
@@ -30,21 +28,25 @@ const StyledMatch = styled.p`
   font-family: "Gochi Hand";
 `;
 
-const StyledWinner = styled.h1`
-  font-size: 3rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: left;
-`;
-
-const StyledFlexbox = styled.div`
+const StyledResultsBox = styled.div`
   display: flex;
+  border-bottom: 4px solid ${colors.gray};
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
 `;
 
 const StyledLogoRetake = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const StyledIlloContainer = styled.div`
+  width: 300px;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const StyledIllo = styled.img`
@@ -55,7 +57,7 @@ const StyledIllo = styled.img`
 
 const StyledDescription = styled.p`
   text-align: left;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 2.2rem;
 `;
 const StyledIlloDesc = styled.div`
@@ -78,12 +80,20 @@ const shareButtonStyles = `
   display: flex;
   align-items: center;
   border-radius: 0;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: white;
-  margin-right: 20px;
-  padding-right: 20px !important;
+  margin-right: 18px;
+  padding-right: 18px !important;
   border: none;
+
+  &:active {
+    filter: brightness(70%);
+  }
+`;
+
+const StyledNickname = styled.h2`
+  font-size: 2rem;
 `;
 
 const StyledButton = styled.button`
@@ -103,6 +113,11 @@ const StyledCopyLinkButton = styled.button`
   ${shareButtonStyles};
   background-color: ${colors.red};
   font-weight: bold;
+  width: 166px;
+
+  &:active {
+    background-color: brightness(70%);
+  }
 `;
 
 const StyledTwitterButton = styled(TwitterShareButton)`
@@ -117,38 +132,83 @@ const StyledFacebookButton = styled(FacebookShareButton)`
 
 const StyledShareText = styled.p`
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
+`;
+
+const StyledThumbButton = styled.button`
+  border: none;
+  margin-right: 4px;
+`;
+const StyledThumb = styled.img`
+  max-width: 80px;
+`;
+
+const StyledCoinsHeader = styled.h2`
+  font-size: 2rem;
+`;
+
+const StyledPoints = styled.p`
+  font-size: 1.6rem;
 `;
 
 export default function Results({
   restartGame,
-  winner,
   score,
 }: {
   restartGame: () => void;
-  winner: string;
   score: Points;
 }) {
+  function getWinningCoin() {
+    let displayedCoin = coins[0];
+    let winningScore = score[coins[0]];
+    coins.forEach((coin) => {
+      if (score[coin] > winningScore) {
+        displayedCoin = coin;
+        winningScore = score[coin];
+      }
+    });
+    return displayedCoin;
+  }
+
+  const [displayedCoin, setDisplayed] = useState<string>(getWinningCoin());
+  const [isCopied, setCopied] = useState(false);
+
+  function onCopyClick() {
+    setCopied(true);
+
+    setTimeout(() => setCopied(false), 2000);
+  }
+
+  function changeDisplayed(coin: string) {
+    setDisplayed(coin);
+  }
+
+  const coinsByScore = coins.sort((a, b) => score[b] - score[a]);
+
   return (
     <StyledResults>
       <StyledMatch>You are...</StyledMatch>
-      <Progress score={score} />
-      <StyledFlexbox>
-        <StyledIllo src={coinIllos[winner]} alt="" />
+      <StyledResultsBox>
+        <StyledIlloContainer>
+          <StyledIllo src={coinIllos[displayedCoin]} alt="" />
+        </StyledIlloContainer>
         <StyledIlloDesc>
           <StyledLogoRetake>
-            <StyledLogo src={coinLogos[winner]} alt="" />
+            <StyledLogo src={coinLogos[displayedCoin]} alt="" />
             <StyledButton onClick={restartGame}>
               <MdRefresh size={20} style={{ marginRight: 12 }} />
               Retake Quiz
             </StyledButton>
           </StyledLogoRetake>
-          <StyledDescription>{descriptions[winner]}</StyledDescription>
+          <StyledNickname>
+            "{nicknames[displayedCoin].toUpperCase()}"
+          </StyledNickname>
+          <StyledDescription>{descriptions[displayedCoin]}</StyledDescription>
           <StyledShareButtons>
             <StyledTwitterButton
               url={shareUrl}
-              title={getQuote(winner)}
+              title={getTwitterText(displayedCoin)}
               hashtags={hashtags}
               related={related}
               resetButtonStyle
@@ -158,22 +218,40 @@ export default function Results({
             </StyledTwitterButton>
             <StyledFacebookButton
               url={shareUrl}
-              quote={getQuote(winner)}
+              quote={getQuote(displayedCoin)}
               hashtag={hashtags[0]}
               resetButtonStyle
             >
               <FacebookIcon />
               <StyledShareText>Share</StyledShareText>
             </StyledFacebookButton>
-            <CopyToClipboard text={shareUrl}>
+            <CopyToClipboard text={shareUrl} onCopy={onCopyClick}>
               <StyledCopyLinkButton>
-                <FaLink color="white" size={30} style={{ marginRight: 16 }} />
-                Copy Link
+                {isCopied ? (
+                  <FaCheck
+                    color="white"
+                    size={30}
+                    style={{ marginRight: 16 }}
+                  />
+                ) : (
+                  <FaLink color="white" size={30} style={{ marginRight: 16 }} />
+                )}
+                {isCopied ? "Copied!" : "Copy Link"}
               </StyledCopyLinkButton>
             </CopyToClipboard>
           </StyledShareButtons>
         </StyledIlloDesc>
-      </StyledFlexbox>
+      </StyledResultsBox>
+
+      <section>
+        <StyledCoinsHeader>Meet the rest of the class:</StyledCoinsHeader>
+        {coinsByScore.map((coin) => (
+          <StyledThumbButton key={coin} onClick={() => changeDisplayed(coin)}>
+            <StyledThumb src={coinIcons[coin]} alt={coin} />
+            <StyledPoints>{score[coin]}</StyledPoints>
+          </StyledThumbButton>
+        ))}
+      </section>
     </StyledResults>
   );
 }

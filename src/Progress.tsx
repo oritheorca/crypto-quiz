@@ -2,7 +2,7 @@
 
 import React from "react";
 import styled from "styled-components/macro";
-import coinImages from "./content/coinImages";
+import { coinIcons } from "./content/coinImages";
 import { getMaxScore } from "./content/questions";
 import { Points } from "./types";
 import { coinColors } from "./ui";
@@ -61,7 +61,7 @@ export default function Progress({ score }: { score: Points }) {
             </svg>
             <StyledCoinImage
               key={`coin-img-${idx}`}
-              src={coinImages[coin]}
+              src={coinIcons[coin]}
               alt={coin}
             />
           </StyledFlexbox>

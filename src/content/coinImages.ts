@@ -6,6 +6,14 @@ import eth from "./images/icons/eth.png";
 import lib from "./images/icons/lib.png";
 import ripple from "./images/icons/ripple.jpg";
 import zec from "./images/icons/zec.png";
+import Binance from "./images/illos/coins/Binance.png";
+import Bitcoin from "./images/illos/coins/Bitcoin.png";
+import BitcoinCash from "./images/illos/coins/BitcoinCash.png";
+import Dogecoin from "./images/illos/coins/Dogecoin.png";
+import Ethereum from "./images/illos/coins/Ethereum.png";
+import Libra from "./images/illos/coins/Libra.png";
+import Ripple from "./images/illos/coins/Ripple.png";
+import Zcash from "./images/illos/coins/Zcash.png";
 import bnbLogo from "./images/logos/binance.png";
 import btcLogo from "./images/logos/bitcoin.svg";
 import bchLogo from "./images/logos/bitcoincash.png";
@@ -15,7 +23,7 @@ import libLogo from "./images/logos/libra.png";
 import rippleLogo from "./images/logos/ripple.jpg";
 import zecLogo from "./images/logos/zcash.svg";
 
-const coinImages: { [name: string]: string } = {
+export const coinIcons: { [name: string]: string } = {
   "Binance Coin": bnb,
   Bitcoin: btc,
   "Bitcoin Cash": bch,
@@ -37,4 +45,13 @@ export const coinLogos: { [name: string]: string } = {
   Zcash: zecLogo,
 };
 
-export default coinImages;
+export const coinIllos: { [name: string]: string } = {
+  "Binance Coin": Binance,
+  Bitcoin: Bitcoin,
+  "Bitcoin Cash": BitcoinCash,
+  Dogecoin: Dogecoin,
+  Ethereum: Ethereum,
+  Libra: Libra,
+  Ripple: Ripple,
+  Zcash: Zcash,
+};

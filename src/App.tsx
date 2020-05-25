@@ -44,8 +44,26 @@ const StyledApp = styled.div`
   }
 `;
 
+const StyledResultsContainer = styled.div`
+  border: 8px solid ${colors.gray};
+  background-color: white;
+  border-radius: 12px;
+  text-align: left;
+  max-width: 1100px;
+  height: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 4rem;
+
+  @media (min-width: 1100px) {
+    min-height: 0;
+    margin-top: 2rem;
+  }
+`;
+
 const StyledBorder = styled.div`
-  border: 8px solid ${colors.lightGray};
   width: 100%;
   height: 100%;
   min-height: calc(100vh - 16px);
@@ -83,29 +101,18 @@ export default function App() {
     setScore(initialScore);
   }
 
-  function getWinningCoin() {
-    let winner = coins[0];
-    let winningScore = score[coins[0]];
-    coins.forEach((coin) => {
-      if (score[coin] > winningScore) {
-        winner = coin;
-        winningScore = score[coin];
-      }
-    });
-    return winner;
+  if (questionIndex === questions.length) {
+    return (
+      <StyledResultsContainer>
+        <WhiteboardBorder />
+        <Results restartGame={restartGame} score={score} />
+      </StyledResultsContainer>
+    );
   }
 
   const getContents = () => {
     if (questionIndex === undefined) {
       return <Home startGame={startGame} />;
-    } else if (questionIndex === questions.length) {
-      return (
-        <Results
-          restartGame={restartGame}
-          winner={getWinningCoin()}
-          score={score}
-        />
-      );
     } else {
       return (
         <Quiz

@@ -35,4 +35,22 @@ export const descriptions: { [coin: string]: string } = {
     "You're the hustler that's always selling candy in the lunch hall and drop shipping on Instagram. Ripple is a cryptocurrency that's marketed for low cost transactions, with a focus on inter-bank transactions and cross-border payments. Unlike Libra, they lack a polished and recognizable brand, but have been successful in creating partnerships with financial organizations around the world.",
 };
 
+export const nicknames: { [coin: string]: string } = {
+  Bitcoin: "The Old-School Teacher",
+
+  "Bitcoin Cash": "The Insecure Substitute",
+
+  Ethereum: "The Whiz Kid",
+
+  Libra: "The Rich Jock",
+
+  "Binance Coin": "The New Money",
+
+  Dogecoin: "The Class Clown",
+
+  Zcash: "The Bookworm",
+
+  Ripple: "The Hustler",
+};
+
 export default coins;
