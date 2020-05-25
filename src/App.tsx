@@ -29,14 +29,14 @@ const StyledApp = styled.div`
   background-color: white;
   border-radius: 12px;
   text-align: left;
-  max-width: 1000px;
+  max-width: 1100px;
   height: 100%;
   min-height: 100vh;
   box-sizing: border-box;
   margin: 0 auto;
   position: relative;
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     min-height: 0;
     height: 760px;
     max-height: 760px;
@@ -60,7 +60,7 @@ const StyledBorder = styled.div`
 `;
 
 export default function App() {
-  const [questionIndex, setIndex] = useState<number | undefined>(undefined);
+  const [questionIndex, setIndex] = useState<number | undefined>(10);
 
   const initialScore = coins.reduce((score: Points, coin) => {
     score[coin] = 0;

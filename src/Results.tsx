@@ -1,12 +1,23 @@
 /** @format */
 
 import React from "react";
+import CopyToClipboard from "react-copy-to-clipboard";
+import { FaLink } from "react-icons/fa";
+import { MdRefresh } from "react-icons/md";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+} from "react-share";
 import styled from "styled-components/macro";
 import coinIllos from "./content/coinIllos";
 import { coinLogos } from "./content/coinImages";
 import { descriptions } from "./content/coins";
 import Progress from "./Progress";
+import { getQuote, hashtags, related, shareUrl } from "./sms";
 import { Points } from "./types";
+import { colors } from "./ui";
 
 const StyledResults = styled.section`
   text-align: center;
@@ -26,31 +37,26 @@ const StyledWinner = styled.h1`
   text-align: left;
 `;
 
-const StyledButton = styled.button`
-  width: 100%;
-  font-size: 1.2rem;
-  cursor: pointer;
-`;
-
 const StyledFlexbox = styled.div`
   display: flex;
 `;
 
-const StyledCoinImage = styled.img`
-  max-width: 120px;
-  height: auto;
-  margin: 0 0.8rem 2rem 0.8rem;
+const StyledLogoRetake = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const StyledIllo = styled.img`
-  object-fit: cover;
+  object-fit: contain;
   max-width: 300px;
   max-height: 450px;
 `;
 
 const StyledDescription = styled.p`
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
 `;
 const StyledIlloDesc = styled.div`
   text-align: left;
@@ -60,7 +66,59 @@ const StyledIlloDesc = styled.div`
 
 const StyledLogo = styled.img`
   height: 70px;
-  margin-bottom: 20px;
+  object-fit: contain;
+`;
+
+const StyledShareButtons = styled.section`
+  display: flex;
+  margin: 2rem 0;
+`;
+
+const shareButtonStyles = `
+  display: flex;
+  align-items: center;
+  border-radius: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-right: 20px;
+  padding-right: 20px !important;
+  border: none;
+`;
+
+const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 0;
+  font-size: 16px;
+  color: white;
+  border: none;
+  margin-bottom: 0;
+  background-color: ${colors.orange};
+  cursor: pointer;
+`;
+
+const StyledCopyLinkButton = styled.button`
+  ${shareButtonStyles};
+  background-color: ${colors.red};
+  font-weight: bold;
+`;
+
+const StyledTwitterButton = styled(TwitterShareButton)`
+  ${shareButtonStyles}
+  background-color: rgb(0, 172, 237) !important;
+`;
+
+const StyledFacebookButton = styled(FacebookShareButton)`
+  ${shareButtonStyles}
+  background-color: rgb(59, 89, 152) !important;
+`;
+
+const StyledShareText = styled.p`
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
 `;
 
 export default function Results({
@@ -79,11 +137,43 @@ export default function Results({
       <StyledFlexbox>
         <StyledIllo src={coinIllos[winner]} alt="" />
         <StyledIlloDesc>
-          <StyledLogo src={coinLogos[winner]} alt="" />
+          <StyledLogoRetake>
+            <StyledLogo src={coinLogos[winner]} alt="" />
+            <StyledButton onClick={restartGame}>
+              <MdRefresh size={20} style={{ marginRight: 12 }} />
+              Retake Quiz
+            </StyledButton>
+          </StyledLogoRetake>
           <StyledDescription>{descriptions[winner]}</StyledDescription>
+          <StyledShareButtons>
+            <StyledTwitterButton
+              url={shareUrl}
+              title={getQuote(winner)}
+              hashtags={hashtags}
+              related={related}
+              resetButtonStyle
+            >
+              <TwitterIcon />
+              <StyledShareText>Tweet</StyledShareText>
+            </StyledTwitterButton>
+            <StyledFacebookButton
+              url={shareUrl}
+              quote={getQuote(winner)}
+              hashtag={hashtags[0]}
+              resetButtonStyle
+            >
+              <FacebookIcon />
+              <StyledShareText>Share</StyledShareText>
+            </StyledFacebookButton>
+            <CopyToClipboard text={shareUrl}>
+              <StyledCopyLinkButton>
+                <FaLink color="white" size={30} style={{ marginRight: 16 }} />
+                Copy Link
+              </StyledCopyLinkButton>
+            </CopyToClipboard>
+          </StyledShareButtons>
         </StyledIlloDesc>
       </StyledFlexbox>
-      <StyledButton onClick={restartGame}>Replay</StyledButton>
     </StyledResults>
   );
 }
