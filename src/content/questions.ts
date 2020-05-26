@@ -161,7 +161,7 @@ const questions = [
       {
         answer: "No thanks. I'm not brainwashed by consumerism.",
         points: {
-          Dogecoin: 5,
+          Dogecoin: 4,
           Zcash: 5,
         },
       },
@@ -198,15 +198,22 @@ const questions = [
     title: "You have your final exams coming up. How do you prepare?",
     answers: [
       {
-        answer: "Procrastinate until the last moment.",
+        answer: "Procrastinate until the night before.",
         points: {
           Zcash: 3,
+          "Bitcoin Cash": 4,
         },
       },
       {
-        answer: "I make a detailed study plan.",
+        answer: "Create a study group and study together.",
         points: {
-          Libra: 3,
+          Ripple: 5,
+        },
+      },
+      {
+        answer: "Make a detailed study plan and study alone.",
+        points: {
+          Libra: 2,
         },
       },
     ],
@@ -225,7 +232,6 @@ const questions = [
         answer: "Unreliable",
         points: {
           Bitcoin: 4,
-          "Binance Coin": 2,
         },
       },
       {
@@ -237,8 +243,7 @@ const questions = [
       {
         answer: "A failure",
         points: {
-          Libra: 4,
-          "Bitcoin Cash": 2,
+          "Bitcoin Cash": 4,
         },
       },
     ],
@@ -256,7 +261,7 @@ const questions = [
       {
         answer: "Facebook",
         points: {
-          Libra: 3,
+          Libra: 2,
         },
       },
       {
@@ -266,10 +271,11 @@ const questions = [
         },
       },
       {
-        answer: "Reddit",
+        answer: "Twitter",
         points: {
-          Ethereum: 3,
-          Bitcoin: 3,
+          Ethereum: 2,
+          Bitcoin: 2,
+          "Bitcoin Cash": 4,
         },
       },
     ],
@@ -288,9 +294,9 @@ const questions = [
       {
         answer: "The Wolf of Wall Street",
         points: {
-          Ripple: 5,
-          Dogecoin: 3,
-          "Binance Coin": 5,
+          Ripple: 4,
+          Dogecoin: 1,
+          "Binance Coin": 2,
         },
       },
       {
