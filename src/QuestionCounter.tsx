@@ -5,7 +5,13 @@ import questions from "./content/questions";
 
 const StyledQuestionCounter = styled.h2`
   display: flex;
-  margin-left: -8px;
+  margin: 0 0 0 -0.2rem;
+  padding: 2rem 2rem 0 2rem;
+
+  @media (min-width: 1100px) {
+    margin: 0 0 0 -0.8rem;
+    padding: 2rem 4rem 0 4rem;
+  }
 `;
 
 const StyledMagnet = styled.img`
@@ -17,7 +23,7 @@ const StyledMagnet = styled.img`
   width: 24px;
   height: 24px;
 
-  @media (min-width: 600px) {
+  @media (min-width: 1100px) {
     width: 48px;
     height: 48px;
   }

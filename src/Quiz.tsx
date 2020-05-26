@@ -6,15 +6,15 @@ import { Points } from "./types";
 export default function Quiz({
   score,
   questionIndex,
-  nextQuestion,
+  onAnswer,
 }: {
   score: Points;
   questionIndex: number;
-  nextQuestion: (points: any) => void;
+  onAnswer: (points: any) => void;
 }) {
   return (
     <section>
-      <Question questionIndex={questionIndex} nextQuestion={nextQuestion} />
+      <Question questionIndex={questionIndex} onAnswer={onAnswer} />
       <Progress score={score} />
     </section>
   );

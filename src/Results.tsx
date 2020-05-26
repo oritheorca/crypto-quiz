@@ -26,17 +26,25 @@ const StyledMatch = styled.p`
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Gochi Hand";
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+
+  @media (min-width: 1100px) {
+    margin-bottom: 0;
+  }
 `;
 
 const StyledResultsBox = styled.div`
   display: flex;
-  border-bottom: 4px solid ${colors.gray};
-  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0rem;
   padding-bottom: 2rem;
+  justify-content: center;
 `;
 
 const StyledLogoRetake = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 `;
@@ -63,16 +71,23 @@ const StyledDescription = styled.p`
 const StyledIlloDesc = styled.div`
   text-align: left;
   margin-top: 2rem;
-  margin-left: 3rem;
+  max-width: 100%;
+
+  @media (min-width: 1100px) {
+    margin-left: 3rem;
+    max-width: 624px;
+  }
 `;
 
 const StyledLogo = styled.img`
   height: 70px;
   object-fit: contain;
+  max-width: 100%;
 `;
 
 const StyledShareButtons = styled.section`
   display: flex;
+  flex-wrap: wrap;
   margin: 2rem 0;
 `;
 
@@ -97,16 +112,8 @@ const StyledNickname = styled.h2`
 `;
 
 const StyledButton = styled.button`
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  border-radius: 0;
-  font-size: 16px;
-  color: white;
-  border: none;
-  margin-bottom: 0;
+  ${shareButtonStyles}
   background-color: ${colors.orange};
-  cursor: pointer;
 `;
 
 const StyledCopyLinkButton = styled.button`
@@ -141,7 +148,7 @@ const StyledThumbButton = styled.button`
   margin-right: 4px;
 `;
 const StyledThumb = styled.img`
-  max-width: 80px;
+  max-width: 40px;
 `;
 
 const StyledCoinsHeader = styled.h2`
@@ -150,6 +157,13 @@ const StyledCoinsHeader = styled.h2`
 
 const StyledPoints = styled.p`
   font-size: 1.6rem;
+`;
+
+const StyledFlexbox = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default function Results({
@@ -196,10 +210,6 @@ export default function Results({
         <StyledIlloDesc>
           <StyledLogoRetake>
             <StyledLogo src={coinLogos[displayedCoin]} alt="" />
-            <StyledButton onClick={restartGame}>
-              <MdRefresh size={20} style={{ marginRight: 12 }} />
-              Retake Quiz
-            </StyledButton>
           </StyledLogoRetake>
           <StyledNickname>
             "{nicknames[displayedCoin].toUpperCase()}"
@@ -239,19 +249,22 @@ export default function Results({
                 {isCopied ? "Copied!" : "Copy Link"}
               </StyledCopyLinkButton>
             </CopyToClipboard>
+            <StyledButton onClick={restartGame}>
+              <MdRefresh size={30} style={{ marginRight: 16 }} />
+              Retake
+            </StyledButton>
           </StyledShareButtons>
         </StyledIlloDesc>
       </StyledResultsBox>
 
-      <section>
+      <StyledFlexbox>
         <StyledCoinsHeader>Meet the rest of the class:</StyledCoinsHeader>
         {coinsByScore.map((coin) => (
           <StyledThumbButton key={coin} onClick={() => changeDisplayed(coin)}>
             <StyledThumb src={coinIcons[coin]} alt={coin} />
-            <StyledPoints>{score[coin]}</StyledPoints>
           </StyledThumbButton>
         ))}
-      </section>
+      </StyledFlexbox>
     </StyledResults>
   );
 }

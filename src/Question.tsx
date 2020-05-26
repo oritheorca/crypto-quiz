@@ -1,10 +1,12 @@
 /** @format */
 
-import React from "react";
-import styled from "styled-components/macro";
+import React, { useState } from "react";
+import styled, { keyframes } from "styled-components/macro";
 import questions from "./content/questions";
 import QuestionCounter from "./QuestionCounter";
 import { colors } from "./ui";
+
+const dotSize = 16;
 
 const StyledQuestion = styled.h1`
   font-size: 1.6rem;
@@ -36,35 +38,102 @@ const StyledAnswer = styled.button`
   }
 `;
 
-const StyledMagnet = styled.div`
-  width: 1.2rem;
-  height: 1.2rem;
-  background: ${colors.red};
-  border-radius: 50%;
+const StyledSvg = styled.svg`
   margin-right: 1rem;
+  min-width: ${dotSize}px;
 `;
 
-export default function Question({
-  questionIndex,
-  nextQuestion,
+const StyledMagnet = styled.circle`
+  border-radius: 50%;
+`;
+
+const StyledQNA = styled.section`
+  position: relative;
+  width: 100%;
+  padding: 0 2rem;
+
+  @media (min-width: 1100px) {
+    padding: 0 4rem;
+  }
+`;
+
+const slide = keyframes`
+  from {
+    margin-left: 0;
+  }
+
+  to {
+    margin-left: -100%;
+  }
+`;
+
+const StyledQuestionContainer = styled.section`
+  width: 200%;
+  display: flex;
+  position: relative;
+  animation: ${(props: any) => (props.isAdvancing ? slide : "none")} 0.25s
+    ease-in forwards;
+`;
+
+export function QNA({
+  question,
+  onAnswer,
 }: {
-  questionIndex: number;
-  nextQuestion: (points: number) => void;
+  question: any;
+  onAnswer: (points: number) => void;
 }) {
-  const question = questions[questionIndex];
   return (
-    <React.Fragment>
-      <QuestionCounter questionIndex={questionIndex} />
+    <StyledQNA>
       <StyledQuestion>{question.title}</StyledQuestion>
       {(question.answers as Array<any>).map((answer, idx) => (
         <StyledAnswer
           key={`quiz-idx-${idx}`}
-          onClick={() => nextQuestion(answer.points)}
+          onClick={() => onAnswer(answer.points)}
         >
-          <StyledMagnet />
+          <StyledSvg width={dotSize} height={dotSize}>
+            <StyledMagnet
+              fill={colors.red}
+              r={dotSize / 2}
+              cx={dotSize / 2}
+              cy={dotSize / 2}
+            />
+          </StyledSvg>
           <div>{answer.answer}</div>
         </StyledAnswer>
       ))}
+    </StyledQNA>
+  );
+}
+
+export default function Question({
+  questionIndex,
+  onAnswer,
+}: {
+  questionIndex: number;
+  onAnswer: (points: number) => void;
+}) {
+  const question = questions[questionIndex];
+  const nextQuestion =
+    questionIndex < questions.length - 1 ? questions[questionIndex + 1] : null;
+  const [isAdvancing, setAdvancing] = useState(false);
+
+  function advanceQuestion(points: number) {
+    setAdvancing(true);
+    setTimeout(() => {
+      setAdvancing(false);
+      onAnswer(points);
+    }, 250);
+  }
+
+  return (
+    <React.Fragment>
+      <QuestionCounter questionIndex={questionIndex} />
+      <StyledQuestionContainer isAdvancing={isAdvancing}>
+        <QNA question={question} onAnswer={advanceQuestion} />
+        {nextQuestion && (
+          <QNA question={nextQuestion} onAnswer={advanceQuestion} />
+        )}
+      </StyledQuestionContainer>
     </React.Fragment>
   );
 }

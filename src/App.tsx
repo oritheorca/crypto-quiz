@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components/macro";
+import About from "./About";
 import "./App.css";
 import coins from "./content/coins";
 import questions from "./content/questions";
@@ -20,12 +21,11 @@ const WhiteboardBorder = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     overflow-y: scroll;
-    background-color: ${colors.blue};
+    background-color: ${colors.yellow};
   }
 `;
 
 const StyledApp = styled.div`
-  border: 8px solid ${colors.gray};
   background-color: white;
   border-radius: 12px;
   text-align: left;
@@ -35,30 +35,31 @@ const StyledApp = styled.div`
   box-sizing: border-box;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 
   @media (min-width: 1100px) {
     min-height: 0;
     height: 760px;
     max-height: 760px;
     margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 `;
 
 const StyledResultsContainer = styled.div`
-  border: 8px solid ${colors.gray};
   background-color: white;
-  border-radius: 12px;
   text-align: left;
   max-width: 1100px;
   height: 100%;
   min-height: 100vh;
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   position: relative;
-  padding: 2rem 4rem;
+  padding: 2rem 2rem;
 
   @media (min-width: 1100px) {
     min-height: 0;
+    padding: 2rem 4rem;
     margin-top: 2rem;
   }
 `;
@@ -78,7 +79,7 @@ const StyledBorder = styled.div`
 `;
 
 export default function App() {
-  const [questionIndex, setIndex] = useState<number | undefined>(10);
+  const [questionIndex, setIndex] = useState<number | undefined>(undefined);
 
   const initialScore = coins.reduce((score: Points, coin) => {
     score[coin] = 0;
@@ -88,7 +89,7 @@ export default function App() {
   const [score, setScore] = useState<Points>(initialScore);
 
   const startGame = () => setIndex(0);
-  const nextQuestion = (points: Points) => {
+  const onAnswer = (points: Points) => {
     Object.keys(points).forEach((coin) => {
       score[coin] = score[coin] + points[coin];
     });
@@ -103,10 +104,16 @@ export default function App() {
 
   if (questionIndex === questions.length) {
     return (
-      <StyledResultsContainer>
-        <WhiteboardBorder />
-        <Results restartGame={restartGame} score={score} />
-      </StyledResultsContainer>
+      <div>
+        <StyledResultsContainer>
+          <WhiteboardBorder />
+          <Results restartGame={restartGame} score={score} />
+        </StyledResultsContainer>
+
+        <StyledResultsContainer>
+          <About />
+        </StyledResultsContainer>
+      </div>
     );
   }
 
@@ -115,21 +122,15 @@ export default function App() {
       return <Home startGame={startGame} />;
     } else {
       return (
-        <Quiz
-          score={score}
-          questionIndex={questionIndex}
-          nextQuestion={nextQuestion}
-        />
+        <Quiz score={score} questionIndex={questionIndex} onAnswer={onAnswer} />
       );
     }
   };
 
   return (
     <StyledApp>
-      <StyledBorder>
-        <WhiteboardBorder />
-        {getContents()}
-      </StyledBorder>
+      <WhiteboardBorder />
+      {getContents()}
     </StyledApp>
   );
 }
