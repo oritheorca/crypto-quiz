@@ -71,8 +71,9 @@ const StyledQuestionContainer = styled.section`
   width: 200%;
   display: flex;
   position: relative;
-  animation: ${(props: any) => (props.isAdvancing ? slide : "none")} 0.25s
-    ease-in forwards;
+  animation: ${(props: { isAdvancing: boolean }) =>
+      props.isAdvancing ? slide : "none"}
+    0.25s ease-in forwards;
 `;
 
 export function QNA({

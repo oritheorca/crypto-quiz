@@ -21,7 +21,7 @@ const WhiteboardBorder = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     overflow-y: scroll;
-    background-color: ${colors.yellow};
+    background-color: ${colors.blue};
   }
 `;
 
