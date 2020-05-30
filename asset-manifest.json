@@ -1,20 +1,22 @@
 {
   "files": {
     "main.css": "/crypto-quiz/static/css/main.822187b6.chunk.css",
-    "main.js": "/crypto-quiz/static/js/main.359e79b7.chunk.js",
-    "main.js.map": "/crypto-quiz/static/js/main.359e79b7.chunk.js.map",
+    "main.js": "/crypto-quiz/static/js/main.710d7882.chunk.js",
+    "main.js.map": "/crypto-quiz/static/js/main.710d7882.chunk.js.map",
     "runtime-main.js": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js",
     "runtime-main.js.map": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js.map",
-    "static/js/2.ddcfb678.chunk.js": "/crypto-quiz/static/js/2.ddcfb678.chunk.js",
-    "static/js/2.ddcfb678.chunk.js.map": "/crypto-quiz/static/js/2.ddcfb678.chunk.js.map",
+    "static/js/2.6bb8afca.chunk.js": "/crypto-quiz/static/js/2.6bb8afca.chunk.js",
+    "static/js/2.6bb8afca.chunk.js.map": "/crypto-quiz/static/js/2.6bb8afca.chunk.js.map",
     "index.html": "/crypto-quiz/index.html",
-    "precache-manifest.6b61f69639992d6ff4b206b363958d4a.js": "/crypto-quiz/precache-manifest.6b61f69639992d6ff4b206b363958d4a.js",
+    "precache-manifest.acb1afbdb0a0c62b55a9151a175b4e91.js": "/crypto-quiz/precache-manifest.acb1afbdb0a0c62b55a9151a175b4e91.js",
     "service-worker.js": "/crypto-quiz/service-worker.js",
     "static/css/main.822187b6.chunk.css.map": "/crypto-quiz/static/css/main.822187b6.chunk.css.map",
-    "static/js/2.ddcfb678.chunk.js.LICENSE.txt": "/crypto-quiz/static/js/2.ddcfb678.chunk.js.LICENSE.txt",
+    "static/js/2.6bb8afca.chunk.js.LICENSE.txt": "/crypto-quiz/static/js/2.6bb8afca.chunk.js.LICENSE.txt",
     "static/media/Binance.png": "/crypto-quiz/static/media/Binance.b9da2105.png",
     "static/media/Bitcoin.png": "/crypto-quiz/static/media/Bitcoin.af5a3e8a.png",
     "static/media/BitcoinCash.png": "/crypto-quiz/static/media/BitcoinCash.c33819e4.png",
+    "static/media/Curtain-L.jpg": "/crypto-quiz/static/media/Curtain-L.3e1cf7bb.jpg",
+    "static/media/Curtain-R.jpg": "/crypto-quiz/static/media/Curtain-R.de7170a2.jpg",
     "static/media/Dogecoin.png": "/crypto-quiz/static/media/Dogecoin.07e7aa7b.png",
     "static/media/Ethereum.png": "/crypto-quiz/static/media/Ethereum.c434418f.png",
     "static/media/Libra.png": "/crypto-quiz/static/media/Libra.2d9a585c.png",
@@ -35,8 +37,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4b57ec2b.js",
-    "static/js/2.ddcfb678.chunk.js",
+    "static/js/2.6bb8afca.chunk.js",
     "static/css/main.822187b6.chunk.css",
-    "static/js/main.359e79b7.chunk.js"
+    "static/js/main.710d7882.chunk.js"
   ]
 }
