@@ -12,7 +12,6 @@ import Home from "./Home";
 import Quiz from "./Quiz";
 import Results from "./Results";
 import { Points } from "./types";
-import { colors } from "./ui";
 
 const WhiteboardBorder = createGlobalStyle`
   body {
@@ -22,11 +21,13 @@ const WhiteboardBorder = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     overflow-y: scroll;
-    background-color: ${colors.blue};
   }
 `;
 
 const StyledApp = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   border-radius: 12px;
   text-align: left;
@@ -36,15 +37,8 @@ const StyledApp = styled.div`
   box-sizing: border-box;
   margin: 0 auto;
   position: relative;
+  z-index: 0;
   overflow: hidden;
-
-  @media (min-width: 1100px) {
-    min-height: 0;
-    height: 760px;
-    max-height: 760px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
 `;
 
 const StyledResultsContainer = styled.div`
@@ -56,27 +50,11 @@ const StyledResultsContainer = styled.div`
   box-sizing: border-box;
   margin: 0 auto 2rem auto;
   position: relative;
-  padding: 2rem 2rem;
 
   @media (min-width: 1100px) {
     min-height: 0;
-    padding: 2rem 4rem;
     margin-top: 2rem;
   }
-`;
-
-const StyledBorder = styled.div`
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - 16px);
-  box-sizing: border-box;
-  padding: 1.2rem;
-  @media (min-width: 1000px) {
-    min-height: 0;
-    padding: 2rem 4rem;
-  }
-  position: relative;
-  overflow: hidden;
 `;
 
 const gaTracking =

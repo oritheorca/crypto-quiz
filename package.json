@@ -19,6 +19,7 @@
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-copy-to-clipboard": "^5.0.2",
+    "react-crossfade-image": "^1.2.0",
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",
     "react-icons": "^3.10.0",

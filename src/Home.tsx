@@ -1,159 +1,88 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import CrossfadeImage from "react-crossfade-image";
 import ReactGA from "react-ga";
 import styled from "styled-components/macro";
-import bitcoinIllo from "./content/images/illos/coins/Bitcoin.png";
-import dogecoinIllo from "./content/images/illos/coins/Dogecoin.png";
-import ethereumIllo from "./content/images/illos/coins/Ethereum.png";
-import zcashIllo from "./content/images/illos/coins/Zcash.png";
-import curtainL from "./content/images/illos/Curtain-L.jpg";
-import curtainR from "./content/images/illos/Curtain-R.jpg";
-import eraser from "./content/images/illos/eraser.png";
-import marker from "./content/images/illos/marker.png";
+import { coinIllos } from "./content/coinImages";
 import { colors } from "./ui";
+import VectorShapes from "./VectorShapes";
 
 const StyledWelcomeContainer = styled.div`
   text-align: center;
 `;
 
-const StyledWelcome = styled.h3`
-  font-size: 1rem;
-  font-family: "Mali", sans-serif;
-
-  @media (min-width: 1000px) {
-    font-size: 1.6rem;
-  }
+const StyledWelcome = styled.h2`
+  font-size: 2.2rem;
+  margin-bottom: 4rem;
+  font-family: "Gochi Hand";
+  text-transform: uppercase;
 `;
 
 const StyledHeader = styled.h1`
-  text-transform: uppercase;
-  font-size: 2.4rem;
-  color: ${colors.red};
-  max-width: 550px;
-  margin: 20px auto;
-
-  @media (min-width: 1000px) {
-    font-size: 3rem;
-  }
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin: 0 4rem 6rem 4rem;
 `;
 
 const StyledButton = styled.button`
-  font-size: 1.2rem;
-  background: ${colors.red};
-  border: 0;
-  color: white;
-  font-weight: bold;
-  border-radius: 0;
-  padding: 0.8rem 1.2rem;
-  cursor: pointer;
-  position: absolute;
-  bottom: 3rem;
-  left: 50%;
-  transform: translate(-50%);
-
-  @media (min-width: 1000px) {
-    font-size: 1.6rem;
-  }
+  margin-bottom: 4rem;
+  background: ${colors.blue};
+  color: ${colors.white};
+  box-shadow: 0px 3px 14px rgba(20, 20, 20, 0.25);
 `;
 
-const StyledLeftCurtain = styled.img`
-  position: absolute;
-  transform: rotate(-6deg);
-  left: -30px;
-  top: 200px;
-  height: 370px;
-
-  @media (min-width: 800px) {
-    position: absolute;
-    left: -50px;
-    top: 0px;
-    height: 710px;
-  }
-`;
-
-const StyledRightCurtain = styled.img`
-  position: absolute;
-  right: -35px;
-  top: 204px;
-  height: 371px;
-
-  @media (min-width: 800px) {
-    right: -70px;
-    top: -13px;
-    height: 742px;
-  }
-`;
-
-const StyledSilhouette = styled.img`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 12rem;
-  width: 140px;
-  filter: brightness(-100%);
-  display: none;
-
-  @media (min-width: 800px) {
-    display: block;
-  }
-`;
-
-const StyledSilhouetteBitcoin = styled.img`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 8rem;
-  width: 140px;
-  filter: brightness(-100%);
-  display: block;
-
-  @media (min-width: 800px) {
-    display: none;
-  }
-`;
-
-const StyledMarker = styled.img`
-  position: absolute;
-  right: 200px;
-  bottom: -79px;
-  transform: rotate(-88deg);
-  height: 120px;
-
-  @media (min-width: 800px) {
-    height: 180px;
-  }
-`;
-
-const StyledEraser = styled.img`
-  position: absolute;
-  left: 170px;
-  bottom: -8px;
-  width: 120px;
-  transform: rotate(10deg);
-
-  @media (min-width: 800px) {
-    width: 180px;
-  }
+const StyledImage = styled.section`
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 40px;
 `;
 
 export default function Home({ startGame }: { startGame: () => void }) {
+  const [imageIdx, setImageIdx] = useState(0);
+
   ReactGA.pageview("/home");
+
+  useEffect(() => {
+    // Preload images
+    Object.values(coinIllos).forEach((picture) => {
+      const img = new Image();
+      img.src = picture;
+    });
+
+    // const intervalId = setInterval(() => {
+    //   setImageIdx(
+    //     imageIdx === Object.keys(coinIllos).length ? 0 : imageIdx + 1
+    //   );
+    // }, 4000);
+
+    // return () => clearInterval(intervalId);
+  }, [imageIdx]);
+
+  const imageSrc = Object.values(coinIllos)[imageIdx];
 
   return (
     <StyledWelcomeContainer>
-      {/* <StyledWelcome>Crypto High Presents:</StyledWelcome> */}
+      <VectorShapes />
+      <StyledWelcome>Crypto High Presents...</StyledWelcome>
       <StyledHeader>Which cryptocurrency are you?</StyledHeader>
-      <StyledLeftCurtain src={curtainL} alt="" />
-      <StyledRightCurtain src={curtainR} alt="" />
-      <StyledSilhouette src={bitcoinIllo} style={{ left: "25%" }} />
-      <StyledSilhouette src={ethereumIllo} style={{ left: "42%" }} />
-      <StyledSilhouette src={zcashIllo} style={{ left: "58%" }} />
-      <StyledSilhouette src={dogecoinIllo} style={{ left: "75%" }} />
-      <StyledMarker src={marker} />
-      <StyledEraser src={eraser} />
-      <StyledSilhouetteBitcoin src={bitcoinIllo} />
-      <StyledButton onClick={startGame}>Let's find out!</StyledButton>
+      <StyledImage>
+        <CrossfadeImage
+          src={imageSrc}
+          delay={0}
+          duration={1000}
+          style={{
+            maxHeight: 200,
+            margin: "0 auto 48px auto",
+            filter: "brightness(0%)",
+          }}
+        />
+      </StyledImage>
+
+      <StyledButton onClick={startGame}>Take the quiz</StyledButton>
     </StyledWelcomeContainer>
   );
 }

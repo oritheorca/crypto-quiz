@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import styled from "styled-components/macro";
 import magnetImages from "./content/images/illos/magnets/magnetImages";
@@ -5,13 +7,8 @@ import questions from "./content/questions";
 
 const StyledQuestionCounter = styled.h2`
   display: flex;
-  margin: 0 0 0 -0.2rem;
-  padding: 2rem 2rem 0 2rem;
-
-  @media (min-width: 1100px) {
-    margin: 0 0 0 -0.8rem;
-    padding: 2rem 4rem 0 4rem;
-  }
+  margin: 0 0 0 -0.8rem;
+  padding: 0 2rem 0 2rem;
 `;
 
 const StyledMagnet = styled.img`

@@ -51,10 +51,6 @@ const StyledQNA = styled.section`
   position: relative;
   width: 100%;
   padding: 0 2rem;
-
-  @media (min-width: 1100px) {
-    padding: 0 4rem;
-  }
 `;
 
 const slide = keyframes`
@@ -74,6 +70,12 @@ const StyledQuestionContainer = styled.section`
   animation: ${(props: { isAdvancing: boolean }) =>
       props.isAdvancing ? slide : "none"}
     0.25s ease-in forwards;
+`;
+
+const StyledPlaceholder = styled.section`
+  position: relative;
+  width: 100%;
+  padding: 0 2rem;
 `;
 
 export function QNA({
@@ -115,7 +117,9 @@ export default function Question({
 }) {
   const question = questions[questionIndex];
   const nextQuestion =
-    questionIndex < questions.length - 1 ? questions[questionIndex + 1] : null;
+    questionIndex < questions.length - 1
+      ? questions[questionIndex + 1]
+      : questions[0];
   const [isAdvancing, setAdvancing] = useState(false);
 
   function advanceQuestion(points: number) {
@@ -134,6 +138,7 @@ export default function Question({
         {nextQuestion && (
           <QNA question={nextQuestion} onAnswer={advanceQuestion} />
         )}
+        {!nextQuestion && <StyledPlaceholder />}
       </StyledQuestionContainer>
     </React.Fragment>
   );

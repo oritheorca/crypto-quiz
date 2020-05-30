@@ -1,8 +1,14 @@
+/** @format */
+
 import React from "react";
 import ReactGA from "react-ga";
-import Progress from "./Progress";
+import styled from "styled-components/macro";
 import Question from "./Question";
 import { Points } from "./types";
+
+const StyledQuiz = styled.section`
+  height: 640px;
+`;
 
 export default function Quiz({
   score,
@@ -16,9 +22,8 @@ export default function Quiz({
   ReactGA.pageview(`/quiz/${questionIndex}`);
 
   return (
-    <section>
+    <StyledQuiz>
       <Question questionIndex={questionIndex} onAnswer={onAnswer} />
-      <Progress score={score} />
-    </section>
+    </StyledQuiz>
   );
 }

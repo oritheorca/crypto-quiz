@@ -12,7 +12,7 @@ import {
   TwitterShareButton,
 } from "react-share";
 import styled from "styled-components/macro";
-import { coinIcons, coinIllos, coinLogos } from "./content/coinImages";
+import { coinIllos, coinLogos } from "./content/coinImages";
 import coins, { descriptions, nicknames } from "./content/coins";
 import { getQuote, getTwitterText, hashtags, related, shareUrl } from "./sms";
 import { Points } from "./types";
@@ -23,7 +23,7 @@ const StyledResults = styled.section`
 `;
 
 const StyledMatch = styled.p`
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Gochi Hand";
@@ -102,6 +102,7 @@ const shareButtonStyles = `
   margin-right: 18px;
   padding-right: 18px !important;
   border: none;
+  width: 166px;
 
   &:active {
     filter: brightness(70%);
@@ -266,15 +267,6 @@ export default function Results({
           </StyledShareButtons>
         </StyledIlloDesc>
       </StyledResultsBox>
-
-      <StyledFlexbox>
-        <StyledCoinsHeader>Meet the rest of the class:</StyledCoinsHeader>
-        {coinsByScore.map((coin) => (
-          <StyledThumbButton key={coin} onClick={() => changeDisplayed(coin)}>
-            <StyledThumb src={coinIcons[coin]} alt={coin} />
-          </StyledThumbButton>
-        ))}
-      </StyledFlexbox>
     </StyledResults>
   );
 }

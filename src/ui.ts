@@ -1,14 +1,15 @@
 export const colors: { [color: string]: string } = {
-  black: "#333333",
+  black: "#1b1b1b",
   gray: "#828282",
   lightGray: "#E0E0E0",
   red: "#EE002A",
   orange: "#F95400",
   yellow: "#F2C94C",
   green: "#27AE60",
-  blue: "#2F80ED",
+  blue: "#005FB0",
   aqua: "#2D9CDB",
   purple: "#9B51E0",
+  white: "#fff",
 };
 
 export const coinColors: { [coin: string]: string } = {
