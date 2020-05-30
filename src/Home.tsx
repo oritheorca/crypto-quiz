@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import ReactGA from "react-ga";
 import styled from "styled-components/macro";
 import bitcoinIllo from "./content/images/illos/coins/Bitcoin.png";
 import dogecoinIllo from "./content/images/illos/coins/Dogecoin.png";
@@ -137,6 +138,8 @@ const StyledEraser = styled.img`
 `;
 
 export default function Home({ startGame }: { startGame: () => void }) {
+  ReactGA.pageview("/home");
+
   return (
     <StyledWelcomeContainer>
       {/* <StyledWelcome>Crypto High Presents:</StyledWelcome> */}

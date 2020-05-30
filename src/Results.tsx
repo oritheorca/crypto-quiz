@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
+import ReactGA from "react-ga";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { FaCheck, FaLink } from "react-icons/fa";
 import { MdRefresh } from "react-icons/md";
@@ -173,6 +174,8 @@ export default function Results({
   restartGame: () => void;
   score: Points;
 }) {
+  ReactGA.pageview(`/results`);
+
   function getWinningCoin() {
     let displayedCoin = coins[0];
     let winningScore = score[coins[0]];
@@ -185,7 +188,8 @@ export default function Results({
     return displayedCoin;
   }
 
-  const [displayedCoin, setDisplayed] = useState<string>(getWinningCoin());
+  const winningCoin = getWinningCoin();
+  const [displayedCoin, setDisplayed] = useState<string>(winningCoin);
   const [isCopied, setCopied] = useState(false);
 
   function onCopyClick() {
@@ -197,6 +201,12 @@ export default function Results({
   function changeDisplayed(coin: string) {
     setDisplayed(coin);
   }
+
+  ReactGA.event({
+    category: "Quiz",
+    action: "Results",
+    label: winningCoin,
+  });
 
   const coinsByScore = coins.sort((a, b) => score[b] - score[a]);
 

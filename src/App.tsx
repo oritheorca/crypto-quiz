@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
+import ReactGA from "react-ga";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components/macro";
 import About from "./About";
@@ -77,6 +78,17 @@ const StyledBorder = styled.div`
   position: relative;
   overflow: hidden;
 `;
+
+const gaTracking =
+  process.env.NODE_ENV === "production" ? "UA-167874833-1" : "UA-167874833-2";
+
+ReactGA.initialize(gaTracking, {
+  debug: true,
+  titleCase: false,
+  gaOptions: {
+    siteSpeedSampleRate: 100,
+  },
+});
 
 export default function App() {
   const [questionIndex, setIndex] = useState<number | undefined>(undefined);
