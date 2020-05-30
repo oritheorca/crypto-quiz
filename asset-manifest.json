@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/crypto-quiz/static/css/main.822187b6.chunk.css",
-    "main.js": "/crypto-quiz/static/js/main.710d7882.chunk.js",
-    "main.js.map": "/crypto-quiz/static/js/main.710d7882.chunk.js.map",
+    "main.js": "/crypto-quiz/static/js/main.ab8d04ac.chunk.js",
+    "main.js.map": "/crypto-quiz/static/js/main.ab8d04ac.chunk.js.map",
     "runtime-main.js": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js",
     "runtime-main.js.map": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js.map",
-    "static/js/2.6bb8afca.chunk.js": "/crypto-quiz/static/js/2.6bb8afca.chunk.js",
-    "static/js/2.6bb8afca.chunk.js.map": "/crypto-quiz/static/js/2.6bb8afca.chunk.js.map",
+    "static/js/2.7f48415b.chunk.js": "/crypto-quiz/static/js/2.7f48415b.chunk.js",
+    "static/js/2.7f48415b.chunk.js.map": "/crypto-quiz/static/js/2.7f48415b.chunk.js.map",
     "index.html": "/crypto-quiz/index.html",
-    "precache-manifest.acb1afbdb0a0c62b55a9151a175b4e91.js": "/crypto-quiz/precache-manifest.acb1afbdb0a0c62b55a9151a175b4e91.js",
+    "precache-manifest.f698a6cb41e7d27d77ca11d947a0cf5f.js": "/crypto-quiz/precache-manifest.f698a6cb41e7d27d77ca11d947a0cf5f.js",
     "service-worker.js": "/crypto-quiz/service-worker.js",
     "static/css/main.822187b6.chunk.css.map": "/crypto-quiz/static/css/main.822187b6.chunk.css.map",
-    "static/js/2.6bb8afca.chunk.js.LICENSE.txt": "/crypto-quiz/static/js/2.6bb8afca.chunk.js.LICENSE.txt",
+    "static/js/2.7f48415b.chunk.js.LICENSE.txt": "/crypto-quiz/static/js/2.7f48415b.chunk.js.LICENSE.txt",
     "static/media/Binance.png": "/crypto-quiz/static/media/Binance.b9da2105.png",
     "static/media/Bitcoin.png": "/crypto-quiz/static/media/Bitcoin.af5a3e8a.png",
     "static/media/BitcoinCash.png": "/crypto-quiz/static/media/BitcoinCash.c33819e4.png",
@@ -37,8 +37,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4b57ec2b.js",
-    "static/js/2.6bb8afca.chunk.js",
+    "static/js/2.7f48415b.chunk.js",
     "static/css/main.822187b6.chunk.css",
-    "static/js/main.710d7882.chunk.js"
+    "static/js/main.ab8d04ac.chunk.js"
   ]
 }
