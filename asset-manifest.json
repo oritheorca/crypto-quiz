@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/crypto-quiz/static/css/main.d4aeab95.chunk.css",
-    "main.js": "/crypto-quiz/static/js/main.c2477845.chunk.js",
-    "main.js.map": "/crypto-quiz/static/js/main.c2477845.chunk.js.map",
+    "main.css": "/crypto-quiz/static/css/main.a40feccd.chunk.css",
+    "main.js": "/crypto-quiz/static/js/main.120120ee.chunk.js",
+    "main.js.map": "/crypto-quiz/static/js/main.120120ee.chunk.js.map",
     "runtime-main.js": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js",
     "runtime-main.js.map": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js.map",
-    "static/js/2.ae213a9c.chunk.js": "/crypto-quiz/static/js/2.ae213a9c.chunk.js",
-    "static/js/2.ae213a9c.chunk.js.map": "/crypto-quiz/static/js/2.ae213a9c.chunk.js.map",
+    "static/js/2.2023ff0e.chunk.js": "/crypto-quiz/static/js/2.2023ff0e.chunk.js",
+    "static/js/2.2023ff0e.chunk.js.map": "/crypto-quiz/static/js/2.2023ff0e.chunk.js.map",
     "index.html": "/crypto-quiz/index.html",
-    "precache-manifest.e599779264b4b30174b2f1ce0e291fb1.js": "/crypto-quiz/precache-manifest.e599779264b4b30174b2f1ce0e291fb1.js",
+    "precache-manifest.09c8f74535e22556afbb7196e32abaff.js": "/crypto-quiz/precache-manifest.09c8f74535e22556afbb7196e32abaff.js",
     "service-worker.js": "/crypto-quiz/service-worker.js",
-    "static/css/main.d4aeab95.chunk.css.map": "/crypto-quiz/static/css/main.d4aeab95.chunk.css.map",
-    "static/js/2.ae213a9c.chunk.js.LICENSE.txt": "/crypto-quiz/static/js/2.ae213a9c.chunk.js.LICENSE.txt",
+    "static/css/main.a40feccd.chunk.css.map": "/crypto-quiz/static/css/main.a40feccd.chunk.css.map",
+    "static/js/2.2023ff0e.chunk.js.LICENSE.txt": "/crypto-quiz/static/js/2.2023ff0e.chunk.js.LICENSE.txt",
     "static/media/Binance.png": "/crypto-quiz/static/media/Binance.b9da2105.png",
     "static/media/Bitcoin.png": "/crypto-quiz/static/media/Bitcoin.af5a3e8a.png",
     "static/media/BitcoinCash.png": "/crypto-quiz/static/media/BitcoinCash.c33819e4.png",
@@ -35,8 +35,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4b57ec2b.js",
-    "static/js/2.ae213a9c.chunk.js",
-    "static/css/main.d4aeab95.chunk.css",
-    "static/js/main.c2477845.chunk.js"
+    "static/js/2.2023ff0e.chunk.js",
+    "static/css/main.a40feccd.chunk.css",
+    "static/js/main.120120ee.chunk.js"
   ]
 }

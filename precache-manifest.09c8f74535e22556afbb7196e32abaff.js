@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b4b109c04b41fcfa9c97021f665bef29",
+    "revision": "6102232e6e26c347b5d591683e887b8d",
     "url": "/crypto-quiz/index.html"
   },
   {
-    "revision": "ef59c80a9e29dd359f64",
-    "url": "/crypto-quiz/static/css/main.d4aeab95.chunk.css"
+    "revision": "df5e4718fbf8a96f2ecb",
+    "url": "/crypto-quiz/static/css/main.a40feccd.chunk.css"
   },
   {
-    "revision": "8646100c78c7776bf153",
-    "url": "/crypto-quiz/static/js/2.ae213a9c.chunk.js"
+    "revision": "8ec1c6b0267b210a4396",
+    "url": "/crypto-quiz/static/js/2.2023ff0e.chunk.js"
   },
   {
     "revision": "aca8f8fc88948883037dd6367532578e",
-    "url": "/crypto-quiz/static/js/2.ae213a9c.chunk.js.LICENSE.txt"
+    "url": "/crypto-quiz/static/js/2.2023ff0e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ef59c80a9e29dd359f64",
-    "url": "/crypto-quiz/static/js/main.c2477845.chunk.js"
+    "revision": "df5e4718fbf8a96f2ecb",
+    "url": "/crypto-quiz/static/js/main.120120ee.chunk.js"
   },
   {
     "revision": "c4ff8b468789a09a0f54",
