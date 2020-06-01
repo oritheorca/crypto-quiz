@@ -1,74 +1,107 @@
+/** @format */
+
 import React from "react";
 import styled from "styled-components/macro";
 import about from "./content/images/illos/about.jpg";
+import ResultsHeader from "./ResultsHeader";
+import { colors } from "./ui";
 
 const StyledContainer = styled.section`
   display: flex;
   text-align: left;
-  font-size: 1.2rem;
+  padding: 2rem;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column-reverse;
+  margin-bottom: 10rem;
 `;
 
 const StyledIllo = styled.img`
+  object-fit: cover;
   max-width: 100%;
+  flex-direction: row-reverse;
+  margin-bottom: 4rem;
 
-  @media (min-width: 1100px) {
-    max-width: 660px;
+  @media (min-width: 800px) {
+    width: 100%;
+    flex: 1;
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+`;
+
+const StyledText = styled.section`
+  max-width: 600px;
+  margin: 0 auto;
+
+  @media (min-width: 800px) {
+    min-width: 280px;
+    margin: 0 2rem 0 0;
   }
 `;
 
 const StyledName = styled.h3`
   text-transform: uppercase;
-  font-size: 1.6rem;
-  margin-bottom: 0;
+  font-size: 3.2rem;
+  font-family: "Gochi Hand";
+  margin-bottom: 0.2rem;
 `;
 
 const StyledLink = styled.a`
-  font-size: 1rem;
   margin-bottom: 0;
+  color: ${colors.green};
+  text-decoration: underline;
+  font-weight: bold;
 `;
 
 const StyledDesc = styled.p`
-  font-size: 1rem;
-  margin: 0;
+  line-height: 4rem;
+  margin: 0 0 0 0;
 `;
 
-const StyledTitle = styled.h1`
-  font-size: 2.4rem;
-  text-align: center;
-  text-transform: uppercase;
-`;
-
-const StyledText = styled.section`
-  max-width: 100%;
-  margin: 0 auto;
-
-  @media (min-width: 1100px) {
-    margin-top: 2rem;
-    max-width: 312px;
-  }
+const StyledBios = styled.section`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export default function About() {
   return (
     <section>
-      <StyledTitle>About this project</StyledTitle>
+      <ResultsHeader>About the team</ResultsHeader>
       <StyledContainer>
         <StyledText>
           <StyledDesc>
-            This quiz is a light-hearted weekend project by two devs based in
-            Tokyo:
+            Hi! We’re <b>Lucky Strike</b>, a two-dev team based in Harajuku, and
+            we made this quiz to help people learn about cryptocurrencies in a
+            light-hearted way.
           </StyledDesc>
-          <section>
-            <StyledName>Yutaro Mori</StyledName>
-            <StyledDesc>blockchain engineer</StyledDesc>
-            <StyledLink>Twitter: @rawfalafel</StyledLink>
-          </section>
-          <section>
-            <StyledName>Grace Kwan</StyledName>
-            <StyledDesc>designer, engineer, illustrator</StyledDesc>
-            <StyledLink>IG: @duckduckgrace_</StyledLink>
-          </section>
+          <StyledBios>
+            <section>
+              <StyledName>Grace Kwan</StyledName>
+              <StyledDesc>Interaction Designer @ IDEO</StyledDesc>
+              <StyledLink
+                href="https://gracekwan.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                gracekwan.com
+              </StyledLink>
+            </section>
+            <section>
+              <StyledName>Yutaro Mori</StyledName>
+              <StyledDesc>Ethereum Contributor</StyledDesc>
+              <StyledLink
+                href="https://twitter.com/rawfalafel?lang=en"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @rawfalafel
+              </StyledLink>{" "}
+              on Twitter
+            </section>
+          </StyledBios>
         </StyledText>
         <StyledIllo src={about} alt="Authors: Yutaro Mori & Grace Kwan" />
       </StyledContainer>

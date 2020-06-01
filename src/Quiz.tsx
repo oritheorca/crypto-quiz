@@ -8,6 +8,7 @@ import { Points } from "./types";
 
 const StyledQuiz = styled.section`
   height: 640px;
+  width: 100%;
 `;
 
 export default function Quiz({

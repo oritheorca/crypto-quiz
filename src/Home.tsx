@@ -1,12 +1,10 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
-import CrossfadeImage from "react-crossfade-image";
+import React from "react";
 import ReactGA from "react-ga";
 import styled from "styled-components/macro";
 import { coinIllos } from "./content/coinImages";
-import { colors } from "./ui";
-import VectorShapes from "./VectorShapes";
+import { buttonBoxShadow, colors } from "./ui";
 
 const StyledWelcomeContainer = styled.div`
   text-align: center;
@@ -29,58 +27,51 @@ const StyledButton = styled.button`
   margin-bottom: 4rem;
   background: ${colors.blue};
   color: ${colors.white};
-  box-shadow: 0px 3px 14px rgba(20, 20, 20, 0.25);
+  ${buttonBoxShadow};
 `;
 
-const StyledImage = styled.section`
+const StyledImages = styled.section`
   display: flex;
-  height: 200px;
   justify-content: center;
   width: 100%;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 6rem;
 `;
 
+const StyledImg = styled.img`
+  object-fit: cover;
+  height: ${(props: { height: number }) => props.height};
+  filter: brightness(0%);
+  margin: 0 2.4rem;
+  transform: scale(0.9);
+  display: none;
+
+  &:first-child {
+    display: block;
+  }
+
+  @media (min-width: 800px) {
+    display: block;
+  }
+`;
+
+export function Silhouette({ coin, height }: { coin: string; height: number }) {
+  return <StyledImg src={coinIllos[coin]} height={height} alt="" />;
+}
+
 export default function Home({ startGame }: { startGame: () => void }) {
-  const [imageIdx, setImageIdx] = useState(0);
-
   ReactGA.pageview("/home");
-
-  useEffect(() => {
-    // Preload images
-    Object.values(coinIllos).forEach((picture) => {
-      const img = new Image();
-      img.src = picture;
-    });
-
-    // const intervalId = setInterval(() => {
-    //   setImageIdx(
-    //     imageIdx === Object.keys(coinIllos).length ? 0 : imageIdx + 1
-    //   );
-    // }, 4000);
-
-    // return () => clearInterval(intervalId);
-  }, [imageIdx]);
-
-  const imageSrc = Object.values(coinIllos)[imageIdx];
 
   return (
     <StyledWelcomeContainer>
-      <VectorShapes />
       <StyledWelcome>Crypto High Presents...</StyledWelcome>
       <StyledHeader>Which cryptocurrency are you?</StyledHeader>
-      <StyledImage>
-        <CrossfadeImage
-          src={imageSrc}
-          delay={0}
-          duration={1000}
-          style={{
-            maxHeight: 200,
-            margin: "0 auto 48px auto",
-            filter: "brightness(0%)",
-          }}
-        />
-      </StyledImage>
+      <StyledImages>
+        <Silhouette coin="Binance Coin" height={215} />
+        <Silhouette coin="Ethereum" height={227} />
+        <Silhouette coin="Dogecoin" height={250} />
+        <Silhouette coin="Zcash" height={172} />
+      </StyledImages>
 
       <StyledButton onClick={startGame}>Take the quiz</StyledButton>
     </StyledWelcomeContainer>

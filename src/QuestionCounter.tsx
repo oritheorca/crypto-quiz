@@ -2,41 +2,50 @@
 
 import React from "react";
 import styled from "styled-components/macro";
-import magnetImages from "./content/images/illos/magnets/magnetImages";
-import questions from "./content/questions";
+import { colors } from "./ui";
 
 const StyledQuestionCounter = styled.h2`
   display: flex;
-  margin: 0 0 0 -0.8rem;
-  padding: 0 2rem 0 2rem;
+  margin: 3.2rem 2rem;
+  justify-content: space-between;
 `;
 
-const StyledMagnet = styled.img`
-  margin-right: 8px;
-  filter: saturate(
-    ${(props: { isFilled: boolean }) => (props.isFilled ? "100%" : 0)}
-  );
-  opacity: ${(props: { isFilled: boolean }) => (props.isFilled ? 1 : 0.5)};
-  width: 24px;
-  height: 24px;
+const StyledBlock = styled.svg`
+  fill: ${({ fill }: { fill: string }) => fill};
+  width: 18px;
+  object-fit: cover;
+  transition: fill 0.3s linear;
 
-  @media (min-width: 1100px) {
-    width: 48px;
-    height: 48px;
+  @media (min-width: 550px) {
+    width: 32px;
   }
 `;
+
+export function Block({ fill = colors.gray }: { fill: string }) {
+  return (
+    <StyledBlock viewBox="0 0 18 23" fill={fill}>
+      <path d="M0.25 10L8.25 14.5V23L0.25 18V10Z" />
+      <path d="M17.75 10L9.75 14.5V23L17.75 18V10Z" />
+      <path d="M0.5 8.75L8.91656 4.1126L17.5 8.5L8.91656 13.3874L0.5 8.75Z" />
+    </StyledBlock>
+  );
+}
 
 export default function QuestionCounter({
   questionIndex,
 }: {
   questionIndex: number;
 }) {
-  const magnets = magnetImages.concat(magnetImages);
-
   return (
     <StyledQuestionCounter>
-      {magnets.slice(0, questions.length).map((src, idx) => (
-        <StyledMagnet src={src} alt="" isFilled={questionIndex >= idx} />
+      {[...Array(10)].map((src, idx) => (
+        <Block
+          fill={
+            questionIndex >= idx
+              ? Object.values(colors)[idx % 4]
+              : colors.lightGray
+          }
+        />
       ))}
     </StyledQuestionCounter>
   );

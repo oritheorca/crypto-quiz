@@ -1,12 +1,12 @@
 export const colors: { [color: string]: string } = {
+  red: "#EE002A",
+  blue: "#005FB0",
+  green: "#27AE60",
+  yellow: "#F2C94C",
   black: "#1b1b1b",
   gray: "#828282",
   lightGray: "#E0E0E0",
-  red: "#EE002A",
   orange: "#F95400",
-  yellow: "#F2C94C",
-  green: "#27AE60",
-  blue: "#005FB0",
   aqua: "#2D9CDB",
   purple: "#9B51E0",
   white: "#fff",
@@ -22,3 +22,7 @@ export const coinColors: { [coin: string]: string } = {
   Ripple: "#0f72e5",
   Zcash: "#F8BB02",
 };
+
+export const buttonBoxShadow = `
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
+`;
