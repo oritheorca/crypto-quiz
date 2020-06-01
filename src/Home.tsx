@@ -11,7 +11,8 @@ const StyledWelcomeContainer = styled.div`
 `;
 
 const StyledWelcome = styled.h2`
-  font-size: 2.2rem;
+  font-size: 2.8rem;
+  padding: 0 2rem;
   margin-bottom: 4rem;
   font-family: "Gochi Hand";
   text-transform: uppercase;
@@ -28,6 +29,12 @@ const StyledButton = styled.button`
   background: ${colors.blue};
   color: ${colors.white};
   ${buttonBoxShadow};
+  border: none;
+
+  &:hover,
+  &:active {
+    opacity: 0.9;
+  }
 `;
 
 const StyledImages = styled.section`

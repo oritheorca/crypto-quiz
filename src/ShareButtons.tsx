@@ -31,8 +31,7 @@ const shareButtonStyles = `
   border-radius: 20px;
   font-size: 18px;
   color: white;
-  margin-right: 18px;
-  margin-bottom: 18px;
+  margin: 0 9px 18px 9px;
   padding: 0 18px !important;
   overflow: hidden;
   border: none;

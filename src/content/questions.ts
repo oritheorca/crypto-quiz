@@ -111,14 +111,14 @@ const questions: QuestionType[] = [
         },
       },
       {
-        answer: "I always sit in the front of the class",
+        answer: "I always sit in the front of the class.",
         points: {
           Libra: 3,
           "Binance Coin": 3,
         },
       },
       {
-        answer: "Depends on where my friends are sitting",
+        answer: "Depends on where my friends are sitting.",
         points: {
           Ethereum: 3,
         },
@@ -129,20 +129,20 @@ const questions: QuestionType[] = [
     title: "Bomb threat! Should the police be able to read students' texts?",
     answers: [
       {
-        answer: "Yes. Safety trumps the individual right to privacy",
+        answer: "Yes. Safety trumps the individual right to privacy.",
         points: {
           "Binance Coin": 3,
           Ripple: 3,
         },
       },
       {
-        answer: "Only if there's evidence beyond a reasonable doubt",
+        answer: "Only if there's evidence beyond a reasonable doubt.",
         points: {
           Libra: 3,
         },
       },
       {
-        answer: "No. That's a hard line that shouldn't be crossed",
+        answer: "No. That's a hard line that shouldn't be crossed.",
         points: {
           Zcash: 6,
           Ethereum: 3,
@@ -169,7 +169,7 @@ const questions: QuestionType[] = [
         },
       },
       {
-        answer: "No thanks. I'm not brainwashed by consumerism",
+        answer: "No thanks. I'm not brainwashed by consumerism.",
         points: {
           Dogecoin: 4,
           Zcash: 5,
@@ -181,7 +181,7 @@ const questions: QuestionType[] = [
     title: "You're asked to organize a fundraiser. How do you go about it?",
     answers: [
       {
-        answer: "Do it all myself. It's just easier that way",
+        answer: "Do it all myself. It's just easier that way.",
         points: {
           Ethereum: 2,
           Ripple: 4,
@@ -189,7 +189,7 @@ const questions: QuestionType[] = [
         },
       },
       {
-        answer: "Set up a committee and share responsibilities",
+        answer: "Set up a committee and share responsibilities.",
         points: {
           Libra: 2,
           Bitcoin: 4,
@@ -197,7 +197,7 @@ const questions: QuestionType[] = [
         },
       },
       {
-        answer: "Procrastinate and hope that everything turns out alright",
+        answer: "Procrastinate and hope that everything turns out alright.",
         points: {
           Dogecoin: 3,
         },

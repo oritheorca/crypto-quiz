@@ -7,6 +7,7 @@ import About from "./About";
 import CoinProfile from "./CoinProfile";
 import coins from "./content/coins";
 import ResultsHeader from "./ResultsHeader";
+import ShareButtons from "./ShareButtons";
 import { Points } from "./types";
 import VectorShapes from "./VectorShapes";
 import WinningCoin from "./WinningCoin";
@@ -19,6 +20,12 @@ const StyledResultsContainer = styled.div`
   box-sizing: border-box;
   margin: 0 auto 2rem auto;
   position: relative;
+`;
+
+const StyledFooterText = styled.p`
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
 `;
 
 export default function Results({
@@ -49,6 +56,11 @@ export default function Results({
       {coinsByScore.slice(1, coinsByScore.length).map((c) => (
         <CoinProfile displayedCoin={c} score={score} key={c} />
       ))}
+
+      <footer>
+        <ResultsHeader>Thanks for playing!</ResultsHeader>
+        <ShareButtons displayedCoin={winningCoin} restartGame={restartGame} />
+      </footer>
     </StyledResultsContainer>
   );
 }

@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components/macro";
 import questions, { QuestionType } from "./content/questions";
 import QuestionCounter from "./QuestionCounter";
@@ -35,6 +35,12 @@ const StyledQuestion = styled.h1`
   }
 `;
 
+type StyledAnswerProps = {
+  fill: string;
+  isSelected: boolean;
+  isNotSelected: boolean;
+};
+
 const StyledAnswer = styled.button`
   width: 100%;
   max-width: 550px;
@@ -45,13 +51,16 @@ const StyledAnswer = styled.button`
   align-items: center;
   padding: 2rem 3rem;
   margin-bottom: 2rem;
-  background: ${(props: { fill: string }) => props.fill};
+  background: ${(props: StyledAnswerProps) =>
+    props.isSelected ? "white" : props.fill};
+  border: 4px solid ${(props: StyledAnswerProps) => props.fill};
+  opacity: ${(props: StyledAnswerProps) => (props.isNotSelected ? 0 : 1)};
+  transition: background-color 0.3s ease-in, opacity 0.5s ease-out;
   ${buttonBoxShadow}
 `;
 
 const StyledQNA = styled.section`
   padding: 0 2rem;
-  width: 100%;
   position: relative;
   animation: ${slide} 0.4s ease-in forwards;
 `;
@@ -61,12 +70,14 @@ const StyledLetter = styled.p`
   font-family: "Arvo";
   font-size: 2.8rem;
   margin: 0 3rem 0 0;
-  color: white;
+  color: ${(props: { isSelected: boolean; fill: string }) =>
+    props.isSelected ? props.fill : "white"};
   padding: 0;
 `;
 
 const StyledAnswerContent = styled.p`
-  color: white;
+  color: ${(props: { isSelected: boolean; fill: string }) =>
+    props.isSelected ? props.fill : "white"};
   font-family: "Gochi Hand";
   font-size: 2rem;
   margin: 0;
@@ -79,6 +90,8 @@ export function QNA({
   question: QuestionType;
   onAnswer: (points: number) => void;
 }) {
+  const [selectedIdx, setSelectedIdx] = useState<undefined | number>(undefined);
+
   function getLetter(idx: number) {
     switch (idx) {
       case 0:
@@ -91,17 +104,38 @@ export function QNA({
         return "D";
     }
   }
+
+  function onClickAnswer(idx: number, points: number) {
+    setSelectedIdx(idx);
+    setTimeout(() => {
+      onAnswer(points);
+      setSelectedIdx(undefined);
+    }, 1000);
+  }
+
   return (
     <StyledQNA key={`question-${question.title}`}>
       <StyledQuestion>{question.title}</StyledQuestion>
       {(question.answers as Array<any>).map((answer, idx) => (
         <StyledAnswer
           key={`quiz-idx-${question.title}-${idx}`}
-          onClick={() => onAnswer(answer.points)}
+          onClick={() => onClickAnswer(idx, answer.points)}
           fill={Object.values(colors)[idx]}
+          isSelected={idx === selectedIdx}
+          isNotSelected={selectedIdx !== undefined && idx !== selectedIdx}
         >
-          <StyledLetter>{getLetter(idx)}</StyledLetter>
-          <StyledAnswerContent>{answer.answer}</StyledAnswerContent>
+          <StyledLetter
+            fill={Object.values(colors)[idx]}
+            isSelected={idx === selectedIdx}
+          >
+            {getLetter(idx)}
+          </StyledLetter>
+          <StyledAnswerContent
+            fill={Object.values(colors)[idx]}
+            isSelected={idx === selectedIdx}
+          >
+            {answer.answer}
+          </StyledAnswerContent>
         </StyledAnswer>
       ))}
     </StyledQNA>

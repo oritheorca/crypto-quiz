@@ -64,6 +64,11 @@ const StyledDesc = styled.p`
 const StyledBios = styled.section`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+`;
+
+const StyledBio = styled.section`
+  min-width: 250px;
 `;
 
 export default function About() {
@@ -78,7 +83,7 @@ export default function About() {
             light-hearted way.
           </StyledDesc>
           <StyledBios>
-            <section>
+            <StyledBio>
               <StyledName>Grace Kwan</StyledName>
               <StyledDesc>Interaction Designer @ IDEO</StyledDesc>
               <StyledLink
@@ -88,8 +93,8 @@ export default function About() {
               >
                 gracekwan.com
               </StyledLink>
-            </section>
-            <section>
+            </StyledBio>
+            <StyledBio>
               <StyledName>Yutaro Mori</StyledName>
               <StyledDesc>Ethereum Contributor</StyledDesc>
               <StyledLink
@@ -100,7 +105,7 @@ export default function About() {
                 @rawfalafel
               </StyledLink>{" "}
               on Twitter
-            </section>
+            </StyledBio>
           </StyledBios>
         </StyledText>
         <StyledIllo src={about} alt="Authors: Yutaro Mori & Grace Kwan" />
