@@ -54,7 +54,7 @@ const StyledIlloContainer = styled.div`
 const StyledIllo = styled.img`
   object-fit: contain;
   max-width: 300px;
-  max-height: 300px;
+  max-height: 360px;
   margin-bottom: 2rem;
 `;
 

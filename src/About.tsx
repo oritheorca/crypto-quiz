@@ -78,8 +78,8 @@ export default function About() {
       <StyledContainer>
         <StyledText>
           <StyledDesc>
-            Hi! We’re <b>Lucky Strike</b>, a two-dev team based in Harajuku, and
-            we made this quiz to help people learn about cryptocurrencies in a
+            Hi! We’re Grace and Yutaro, a two-dev team based in Harajuku, and we
+            made this quiz to help people learn about cryptocurrencies in a
             light-hearted way.
           </StyledDesc>
           <StyledBios>

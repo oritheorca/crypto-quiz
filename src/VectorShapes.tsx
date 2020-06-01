@@ -21,14 +21,24 @@ const StyledSvg = styled.svg`
   top: ${() => Math.random() * 200 - 200}px;
 `;
 
+type PathProps = {
+  scaleFactor: number;
+  rotation: number;
+};
+
 const StyledPath = styled.path`
   opacity: 0.15;
-  transform: scale(${Math.random() * 0.5 + 0.75});
+  transform: scale(${(props: PathProps) => props.scaleFactor})
+    rotate(${(props: PathProps) => props.rotation}deg);
+  transform-origin: center;
+  overflow: visible;
 `;
 
 const Shape2 = ({ useColor }: { useColor: boolean }) => (
   <StyledSvg width="153" height="137" viewBox="0 0 153 137" fill="none">
     <StyledPath
+      scaleFactor={Math.random() + 0.5}
+      rotation={Math.random() * 360}
       d="M3.4202 84.5723L67.6579 118.595L121.352 127.496L72.7294 14.0228L78.6025 88.5245L3.4202 84.5723Z"
       fill={useColor ? "#009139" : "gray"}
     />
@@ -38,6 +48,8 @@ const Shape2 = ({ useColor }: { useColor: boolean }) => (
 const Shape3 = ({ useColor }: { useColor: boolean }) => (
   <StyledSvg width="150" height="191" viewBox="0 0 150 191" fill="none">
     <StyledPath
+      scaleFactor={Math.random() + 0.5}
+      rotation={Math.random() * 360}
       d="M26.9274 107.444L109.427 171.788L122.427 83.7877L87.2916 1.68838L60.4268 57.3601L26.9274 107.444Z"
       fill={useColor ? "#E7E2CB" : "gray"}
     />
@@ -47,6 +59,8 @@ const Shape3 = ({ useColor }: { useColor: boolean }) => (
 const Shape4 = ({ useColor }: { useColor: boolean }) => (
   <StyledSvg width="134" height="122" viewBox="0 0 134 122" fill="none">
     <StyledPath
+      scaleFactor={Math.random() + 0.5}
+      rotation={Math.random() * 360}
       d="M81.0397 115.806L124.04 76.3061L112.461 23.097L56.5005 6.80612L9.15555 49.5971L19.0398 100.806L81.0397 115.806Z"
       fill={useColor ? "#E7C3C8" : "gray"}
     />
@@ -56,6 +70,8 @@ const Shape4 = ({ useColor }: { useColor: boolean }) => (
 const Shape5 = ({ useColor }: { useColor: boolean }) => (
   <StyledSvg width="116" height="120" viewBox="0 0 116 120" fill="none">
     <StyledPath
+      scaleFactor={Math.random() + 0.5}
+      rotation={Math.random() * 360}
       d="M2.57504 75.8974L48.7686 119.888L82.017 13.2213L2.57504 75.8974Z"
       fill={useColor ? "#C3D9CC" : "gray"}
     />
@@ -65,6 +81,8 @@ const Shape5 = ({ useColor }: { useColor: boolean }) => (
 const Shape6 = ({ useColor }: { useColor: boolean }) => (
   <StyledSvg fill="none" height="137" viewBox="0 0 116 137" width="116">
     <StyledPath
+      scaleFactor={Math.random() + 0.5}
+      rotation={Math.random() * 360}
       d="m26 11-26 50.5 26 75 90-84.5-22.5-52z"
       fill={useColor ? "#f00021" : "gray"}
     />
