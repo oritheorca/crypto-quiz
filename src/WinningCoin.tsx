@@ -60,8 +60,8 @@ const StyledIllo = styled.img`
 
 const StyledDescription = styled.p`
   text-align: left;
-  font-size: 2rem;
-  line-height: 4rem;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
   max-width: 600px;
   margin-bottom: 3rem;
 `;

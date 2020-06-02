@@ -39,7 +39,7 @@ ReactGA.initialize(gaTracking, {
 });
 
 export default function App() {
-  const [questionIndex, setIndex] = useState<number | undefined>(undefined);
+  const [questionIndex, setIndex] = useState<number | undefined>(10);
 
   const initialScore = coins.reduce((score: Points, coin) => {
     score[coin] = 0;
