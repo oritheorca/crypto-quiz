@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/crypto-quiz/static/css/main.a40feccd.chunk.css",
-    "main.js": "/crypto-quiz/static/js/main.120120ee.chunk.js",
-    "main.js.map": "/crypto-quiz/static/js/main.120120ee.chunk.js.map",
+    "main.js": "/crypto-quiz/static/js/main.ef5813cd.chunk.js",
+    "main.js.map": "/crypto-quiz/static/js/main.ef5813cd.chunk.js.map",
     "runtime-main.js": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js",
     "runtime-main.js.map": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js.map",
-    "static/js/2.2023ff0e.chunk.js": "/crypto-quiz/static/js/2.2023ff0e.chunk.js",
-    "static/js/2.2023ff0e.chunk.js.map": "/crypto-quiz/static/js/2.2023ff0e.chunk.js.map",
+    "static/js/2.f2695316.chunk.js": "/crypto-quiz/static/js/2.f2695316.chunk.js",
+    "static/js/2.f2695316.chunk.js.map": "/crypto-quiz/static/js/2.f2695316.chunk.js.map",
     "index.html": "/crypto-quiz/index.html",
-    "precache-manifest.09c8f74535e22556afbb7196e32abaff.js": "/crypto-quiz/precache-manifest.09c8f74535e22556afbb7196e32abaff.js",
+    "precache-manifest.dab8bdc75561c4b81e51c4b1527e7794.js": "/crypto-quiz/precache-manifest.dab8bdc75561c4b81e51c4b1527e7794.js",
     "service-worker.js": "/crypto-quiz/service-worker.js",
     "static/css/main.a40feccd.chunk.css.map": "/crypto-quiz/static/css/main.a40feccd.chunk.css.map",
-    "static/js/2.2023ff0e.chunk.js.LICENSE.txt": "/crypto-quiz/static/js/2.2023ff0e.chunk.js.LICENSE.txt",
+    "static/js/2.f2695316.chunk.js.LICENSE.txt": "/crypto-quiz/static/js/2.f2695316.chunk.js.LICENSE.txt",
     "static/media/Binance.png": "/crypto-quiz/static/media/Binance.b9da2105.png",
     "static/media/Bitcoin.png": "/crypto-quiz/static/media/Bitcoin.af5a3e8a.png",
     "static/media/BitcoinCash.png": "/crypto-quiz/static/media/BitcoinCash.c33819e4.png",
@@ -20,7 +20,7 @@
     "static/media/Libra.png": "/crypto-quiz/static/media/Libra.2d9a585c.png",
     "static/media/Ripple.png": "/crypto-quiz/static/media/Ripple.c6b52a53.png",
     "static/media/Zcash.png": "/crypto-quiz/static/media/Zcash.c97b2e67.png",
-    "static/media/about.jpg": "/crypto-quiz/static/media/about.342511ce.jpg",
+    "static/media/about.png": "/crypto-quiz/static/media/about.0bcf635f.png",
     "static/media/bch.png": "/crypto-quiz/static/media/bch.85dc17c1.png",
     "static/media/bitcoin.svg": "/crypto-quiz/static/media/bitcoin.82757bba.svg",
     "static/media/btc.png": "/crypto-quiz/static/media/btc.f41025e9.png",
@@ -35,8 +35,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4b57ec2b.js",
-    "static/js/2.2023ff0e.chunk.js",
+    "static/js/2.f2695316.chunk.js",
     "static/css/main.a40feccd.chunk.css",
-    "static/js/main.120120ee.chunk.js"
+    "static/js/main.ef5813cd.chunk.js"
   ]
 }
