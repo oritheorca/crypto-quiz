@@ -2,7 +2,7 @@
 
 import React from "react";
 import styled from "styled-components/macro";
-import about from "./content/images/illos/about.jpg";
+import about from "./content/images/illos/about.png";
 import ResultsHeader from "./ResultsHeader";
 import { colors } from "./ui";
 

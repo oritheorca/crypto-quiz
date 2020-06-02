@@ -75,12 +75,23 @@ const StyledLetter = styled.p`
   padding: 0;
 `;
 
+type AnswerContentProps = {
+  isSelected: boolean;
+  fill: string;
+  hoverFill: string;
+};
+
 const StyledAnswerContent = styled.p`
-  color: ${(props: { isSelected: boolean; fill: string }) =>
+  color: ${(props: AnswerContentProps) =>
     props.isSelected ? props.fill : "white"};
   font-family: "Gochi Hand";
   font-size: 2rem;
   margin: 0;
+
+  &:hover {
+    color: ${(props: AnswerContentProps) =>
+      props.isSelected ? props.hoverFill : "white"};
+  }
 `;
 
 export function QNA({
@@ -110,7 +121,7 @@ export function QNA({
     setTimeout(() => {
       onAnswer(points);
       setSelectedIdx(undefined);
-    }, 1000);
+    }, 800);
   }
 
   return (
@@ -132,6 +143,7 @@ export function QNA({
           </StyledLetter>
           <StyledAnswerContent
             fill={Object.values(colors)[idx]}
+            hoverFill={Object.values(colors)[idx + 4]}
             isSelected={idx === selectedIdx}
           >
             {answer.answer}

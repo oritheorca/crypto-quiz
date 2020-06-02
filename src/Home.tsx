@@ -33,7 +33,7 @@ const StyledButton = styled.button`
 
   &:hover,
   &:active {
-    opacity: 0.9;
+    background: ${colors.darkBlue};
   }
 `;
 

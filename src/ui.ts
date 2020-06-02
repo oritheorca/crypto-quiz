@@ -4,9 +4,9 @@ export const colors: { [color: string]: string } = {
   green: "#27AE60",
   yellow: "#F2C94C",
   darkRed: "#D50011",
-  darkBlue: "#005FB0",
+  darkBlue: "#004697",
   darkGreen: "#007820",
-  darkYellow: "#F2C94C",
+  darkYellow: "#D9B033",
   black: "#1b1b1b",
   gray: "#828282",
   lightGray: "#E0E0E0",
@@ -28,5 +28,5 @@ export const coinColors: { [coin: string]: string } = {
 };
 
 export const buttonBoxShadow = `
-  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25), inset 0px 0px 30px rgba(0, 0, 0, 0.1);;
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25), inset 0px 0px 30px rgba(0, 0, 0, 0.1);
 `;
