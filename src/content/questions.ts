@@ -81,7 +81,6 @@ const questions: QuestionType[] = [
         answer: "Found a successful startup",
         points: {
           Ethereum: 3,
-          "Binance Coin": 3,
           Ripple: 3,
         },
       },

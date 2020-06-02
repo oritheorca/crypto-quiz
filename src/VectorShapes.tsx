@@ -99,15 +99,11 @@ export default function VectorShapes({
   }
 
   useLayoutEffect(() => {
-    console.log(window.innerWidth);
-    console.log(window.innerHeight);
     drawShapes();
 
     window.addEventListener("resize", drawShapes);
     return () => window.removeEventListener("resize", drawShapes);
   }, []);
-
-  console.log("numShapes: ", numShapes);
 
   const shapes = [Shape2, Shape3, Shape4, Shape5, Shape6];
 
@@ -115,7 +111,7 @@ export default function VectorShapes({
     <StyledShapes>
       {[...Array(numShapes)].map((shape, idx) => {
         const Shape = shapes[Math.floor(Math.random() * shapes.length)];
-        return <Shape useColor={useColor} />;
+        return <Shape key={idx} useColor={useColor} />;
       })}
     </StyledShapes>
   );

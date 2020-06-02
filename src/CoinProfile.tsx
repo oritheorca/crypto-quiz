@@ -127,7 +127,7 @@ export default function CoinProfile({
       </StyledResultsBox>
       <StyledBlocks>
         {[...Array(4)].map((el, idx) => (
-          <Block fill={Object.values(colors)[idx % 4]} />
+          <Block key={idx} fill={Object.values(colors)[idx % 4]} />
         ))}
       </StyledBlocks>
     </StyledResults>

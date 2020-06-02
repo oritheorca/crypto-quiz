@@ -45,6 +45,7 @@ export default function QuestionCounter({
               ? Object.values(colors)[idx % 4]
               : colors.lightGray
           }
+          key={idx}
         />
       ))}
     </StyledQuestionCounter>
