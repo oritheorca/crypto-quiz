@@ -49,10 +49,6 @@ const StyledDescription = styled.p`
   line-height: 3.2rem;
   max-width: 600px;
   margin-bottom: 3rem;
-
-  @media (min-width: 800px) {
-    font-size: 2rem;
-  }
 `;
 
 const StyledIlloDesc = styled.div`

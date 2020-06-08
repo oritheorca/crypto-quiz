@@ -64,6 +64,7 @@ const StyledDescription = styled.p`
   line-height: 3.2rem;
   max-width: 600px;
   margin-bottom: 3rem;
+  white-space: pre-line;
 `;
 const StyledIlloDesc = styled.div`
   text-align: left;
