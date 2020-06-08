@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/crypto-quiz/static/css/main.a40feccd.chunk.css",
-    "main.js": "/crypto-quiz/static/js/main.4773300d.chunk.js",
-    "main.js.map": "/crypto-quiz/static/js/main.4773300d.chunk.js.map",
+    "main.css": "/crypto-quiz/static/css/main.1ea9fcda.chunk.css",
+    "main.js": "/crypto-quiz/static/js/main.4174b4f9.chunk.js",
+    "main.js.map": "/crypto-quiz/static/js/main.4174b4f9.chunk.js.map",
     "runtime-main.js": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js",
     "runtime-main.js.map": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js.map",
     "static/js/2.2f980003.chunk.js": "/crypto-quiz/static/js/2.2f980003.chunk.js",
     "static/js/2.2f980003.chunk.js.map": "/crypto-quiz/static/js/2.2f980003.chunk.js.map",
     "index.html": "/crypto-quiz/index.html",
-    "precache-manifest.0d12e672a1866fa54b5a26b6ae06433c.js": "/crypto-quiz/precache-manifest.0d12e672a1866fa54b5a26b6ae06433c.js",
+    "precache-manifest.6a8948aaeef00b6df7af4bb4ec24b160.js": "/crypto-quiz/precache-manifest.6a8948aaeef00b6df7af4bb4ec24b160.js",
     "service-worker.js": "/crypto-quiz/service-worker.js",
-    "static/css/main.a40feccd.chunk.css.map": "/crypto-quiz/static/css/main.a40feccd.chunk.css.map",
+    "static/css/main.1ea9fcda.chunk.css.map": "/crypto-quiz/static/css/main.1ea9fcda.chunk.css.map",
     "static/js/2.2f980003.chunk.js.LICENSE.txt": "/crypto-quiz/static/js/2.2f980003.chunk.js.LICENSE.txt",
     "static/media/Binance.png": "/crypto-quiz/static/media/Binance.b9da2105.png",
     "static/media/Bitcoin.png": "/crypto-quiz/static/media/Bitcoin.af5a3e8a.png",
@@ -36,7 +36,7 @@
   "entrypoints": [
     "static/js/runtime-main.4b57ec2b.js",
     "static/js/2.2f980003.chunk.js",
-    "static/css/main.a40feccd.chunk.css",
-    "static/js/main.4773300d.chunk.js"
+    "static/css/main.1ea9fcda.chunk.css",
+    "static/js/main.4174b4f9.chunk.js"
   ]
 }
