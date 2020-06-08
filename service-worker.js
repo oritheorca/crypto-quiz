@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/crypto-quiz/precache-manifest.c039a81c40213ddef7b6d323ccc57800.js"
+  "/crypto-quiz/precache-manifest.adb2dc3ef0c1d9bad7ea6b884465883b.js"
 );
 
 self.addEventListener('message', (event) => {
