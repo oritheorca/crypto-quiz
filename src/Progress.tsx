@@ -15,13 +15,14 @@ const StyledProgress = styled.div`
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
   @media (min-width: 800px) {
     bottom: 20px;
   }
 `;
 
-const StyledCoinImage = styled.img`
+const StyledCoinImage = styled.img`pa
   max-width: 24px;
   height: auto;
   margin: 0 0.4rem 2rem 0.4rem;

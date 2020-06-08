@@ -4,7 +4,7 @@ import React from "react";
 import ReactGA from "react-ga";
 import styled from "styled-components/macro";
 import { coinIllos } from "./content/coinImages";
-import { buttonBoxShadow, colors } from "./ui";
+import { buttonBoxShadow, buttonWithHover, colors } from "./ui";
 
 const StyledWelcomeContainer = styled.div`
   text-align: center;
@@ -31,10 +31,7 @@ const StyledButton = styled.button`
   ${buttonBoxShadow};
   border: none;
 
-  &:hover,
-  &:active {
-    background: ${colors.darkBlue};
-  }
+  ${buttonWithHover}
 `;
 
 const StyledImages = styled.section`

@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import ReactGA from "react-ga";
+import { Helmet } from "react-helmet";
 import styled from "styled-components/macro";
 import "./App.css";
 import coins from "./content/coins";
+import CoinsImage from "./content/images/illos/all.jpg";
 import questions from "./content/questions";
 import Home from "./Home";
 import Quiz from "./Quiz";
@@ -79,6 +81,19 @@ export default function App() {
   return (
     <StyledApp>
       <VectorShapes />
+      <Helmet title="Which cryptocurrency are you?">
+        <meta property="og:title" content={`Which cryptocurrency are you?`} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="If cryptocurrencies were high schoolers, which one would you be?"
+        />
+        <meta property="og:image" content={CoinsImage} />
+        <meta
+          property="og:url"
+          content="https://gckwan.github.io/crypto-quiz/"
+        />
+      </Helmet>
       {getContents()}
     </StyledApp>
   );

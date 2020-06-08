@@ -1,3 +1,5 @@
+/** @format */
+
 export const shareUrl = "https://tinyurl.com/crypto-quiz";
 
 // SMS Sharing

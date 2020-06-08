@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styled, { keyframes } from "styled-components/macro";
 import questions, { QuestionType } from "./content/questions";
 import QuestionCounter from "./QuestionCounter";
-import { buttonBoxShadow, colors } from "./ui";
+import { buttonBoxShadow, buttonWithHover, colors } from "./ui";
 
 const slide = keyframes`
   from {
@@ -37,6 +37,7 @@ const StyledQuestion = styled.h1`
 
 type StyledAnswerProps = {
   fill: string;
+  hoverFill: string;
   isSelected: boolean;
   isNotSelected: boolean;
 };
@@ -53,10 +54,18 @@ const StyledAnswer = styled.button`
   margin-bottom: 2rem;
   background: ${(props: StyledAnswerProps) =>
     props.isSelected ? "white" : props.fill};
-  border: 4px solid ${(props: StyledAnswerProps) => props.fill};
+  border: 4px solid
+    ${(props: StyledAnswerProps) =>
+      props.isSelected ? props.fill : "rgba(0,0,0,0)"};
   opacity: ${(props: StyledAnswerProps) => (props.isNotSelected ? 0 : 1)};
-  transition: background-color 0.3s ease-in, opacity 0.5s ease-out;
   ${buttonBoxShadow}
+  ${buttonWithHover}
+  transition: box-shadow .25s ease, transform .25s ease, background-color 0.3s ease-in, opacity 0.5s ease-out;
+
+  &:hover {
+    color: ${(props: StyledAnswerProps) =>
+      props.isSelected ? props.hoverFill : "white"};
+  }
 `;
 
 const StyledQNA = styled.section`
@@ -78,20 +87,14 @@ const StyledLetter = styled.p`
 type AnswerContentProps = {
   isSelected: boolean;
   fill: string;
-  hoverFill: string;
 };
 
 const StyledAnswerContent = styled.p`
   color: ${(props: AnswerContentProps) =>
     props.isSelected ? props.fill : "white"};
   font-family: "Gochi Hand";
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin: 0;
-
-  &:hover {
-    color: ${(props: AnswerContentProps) =>
-      props.isSelected ? props.hoverFill : "white"};
-  }
 `;
 
 export function QNA({
@@ -132,6 +135,7 @@ export function QNA({
           key={`quiz-idx-${question.title}-${idx}`}
           onClick={() => onClickAnswer(idx, answer.points)}
           fill={Object.values(colors)[idx]}
+          hoverFill={Object.values(colors)[idx + 4]}
           isSelected={idx === selectedIdx}
           isNotSelected={selectedIdx !== undefined && idx !== selectedIdx}
         >
@@ -143,7 +147,6 @@ export function QNA({
           </StyledLetter>
           <StyledAnswerContent
             fill={Object.values(colors)[idx]}
-            hoverFill={Object.values(colors)[idx + 4]}
             isSelected={idx === selectedIdx}
           >
             {answer.answer}

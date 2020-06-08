@@ -63,7 +63,7 @@ const StyledIlloDesc = styled.div`
 `;
 
 const StyledLogo = styled.img`
-  height: 50px;
+  height: 70px;
   object-fit: contain;
   max-width: 100%;
   margin: 0 auto;
