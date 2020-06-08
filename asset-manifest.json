@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/crypto-quiz/static/css/main.a40feccd.chunk.css",
-    "main.js": "/crypto-quiz/static/js/main.ef5813cd.chunk.js",
-    "main.js.map": "/crypto-quiz/static/js/main.ef5813cd.chunk.js.map",
+    "main.js": "/crypto-quiz/static/js/main.cd458e61.chunk.js",
+    "main.js.map": "/crypto-quiz/static/js/main.cd458e61.chunk.js.map",
     "runtime-main.js": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js",
     "runtime-main.js.map": "/crypto-quiz/static/js/runtime-main.4b57ec2b.js.map",
     "static/js/2.f2695316.chunk.js": "/crypto-quiz/static/js/2.f2695316.chunk.js",
     "static/js/2.f2695316.chunk.js.map": "/crypto-quiz/static/js/2.f2695316.chunk.js.map",
     "index.html": "/crypto-quiz/index.html",
-    "precache-manifest.dab8bdc75561c4b81e51c4b1527e7794.js": "/crypto-quiz/precache-manifest.dab8bdc75561c4b81e51c4b1527e7794.js",
+    "precache-manifest.cdbe2785bda99d58b3dedf0937470087.js": "/crypto-quiz/precache-manifest.cdbe2785bda99d58b3dedf0937470087.js",
     "service-worker.js": "/crypto-quiz/service-worker.js",
     "static/css/main.a40feccd.chunk.css.map": "/crypto-quiz/static/css/main.a40feccd.chunk.css.map",
     "static/js/2.f2695316.chunk.js.LICENSE.txt": "/crypto-quiz/static/js/2.f2695316.chunk.js.LICENSE.txt",
@@ -37,6 +37,6 @@
     "static/js/runtime-main.4b57ec2b.js",
     "static/js/2.f2695316.chunk.js",
     "static/css/main.a40feccd.chunk.css",
-    "static/js/main.ef5813cd.chunk.js"
+    "static/js/main.cd458e61.chunk.js"
   ]
 }
