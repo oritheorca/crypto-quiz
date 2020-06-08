@@ -11,11 +11,9 @@ const StyledProgress = styled.div`
   display: flex;
   justify-content: center;
   position: absolute;
-  position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
   @media (min-width: 800px) {
     bottom: 20px;

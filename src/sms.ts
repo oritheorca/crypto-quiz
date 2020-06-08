@@ -7,7 +7,7 @@ export const getQuote = (coinName: string) => {
   return `I got ${coinName}!`;
 };
 export const getTwitterText = (coinName: string) => {
-  return `Which cryptocurrency are you? I got ${coinName}!`;
+  return `If you went to Crypto High School, who would you be? I got ${coinName}!\n`;
 };
-export const hashtags = ["cryptocurrency", "crypto", "blockchain", "quiz"];
+export const hashtags = [];
 export const related = ["rawfalafel", "gckwan"];

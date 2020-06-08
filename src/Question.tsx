@@ -54,9 +54,7 @@ const StyledAnswer = styled.button`
   margin-bottom: 2rem;
   background: ${(props: StyledAnswerProps) =>
     props.isSelected ? "white" : props.fill};
-  border: 4px solid
-    ${(props: StyledAnswerProps) =>
-      props.isSelected ? props.fill : "rgba(0,0,0,0)"};
+  border: 4px solid ${(props: StyledAnswerProps) => props.fill};
   opacity: ${(props: StyledAnswerProps) => (props.isNotSelected ? 0 : 1)};
   ${buttonBoxShadow}
   ${buttonWithHover}

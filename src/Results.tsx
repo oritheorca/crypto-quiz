@@ -22,12 +22,6 @@ const StyledResultsContainer = styled.div`
   position: relative;
 `;
 
-const StyledFooterText = styled.p`
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.6rem;
-`;
-
 export default function Results({
   restartGame,
   score,
@@ -48,7 +42,7 @@ export default function Results({
 
   return (
     <StyledResultsContainer>
-      <VectorShapes useColor={false} />
+      <VectorShapes />
       <WinningCoin coin={winningCoin} restartGame={restartGame} score={score} />
       <About />
 

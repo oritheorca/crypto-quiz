@@ -6,8 +6,13 @@ import { colors } from "./ui";
 
 const StyledQuestionCounter = styled.h2`
   display: flex;
-  margin: 3.2rem 2rem;
+  margin: 0 2rem 3.2rem 2rem;
+  max-height: 42px;
   justify-content: space-between;
+
+  @media (min-width: 800px) {
+    margin-bottom: 4.8rem;
+  }
 `;
 
 const fadeIn = keyframes`

@@ -3,23 +3,31 @@
 import React from "react";
 import ReactGA from "react-ga";
 import styled from "styled-components/macro";
+import Block from "./Block";
 import { coinIllos, coinLogos } from "./content/coinImages";
 import { descriptions, nicknames } from "./content/coins";
 import MatchScore from "./MatchScore";
-import { Block } from "./QuestionCounter";
 import { Points } from "./types";
 import { colors } from "./ui";
 
 const StyledResults = styled.section`
   text-align: center;
-  padding: 4rem 2rem 8rem 2rem;
+  padding: 0rem 2rem 4rem 2rem;
+
+  @media (min-width: 800px) {
+    padding: 4rem 2rem 8rem 2rem;
+  }
 `;
 
 const StyledResultsBox = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
   justify-content: center;
+  margin: 2rem;
+
+  @media (min-width: 800px) {
+    margin-bottom: 4rem;
+  }
 `;
 
 const StyledLogoRetake = styled.div`
@@ -128,7 +136,7 @@ export default function CoinProfile({
       </StyledResultsBox>
       <StyledBlocks>
         {[...Array(4)].map((el, idx) => (
-          <Block key={idx} fill={Object.values(colors)[idx % 4]} />
+          <Block key={idx} fill={Object.values(colors)[idx % 4]} width={32} />
         ))}
       </StyledBlocks>
     </StyledResults>

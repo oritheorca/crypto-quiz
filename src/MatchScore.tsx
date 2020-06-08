@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import styled, { keyframes } from "styled-components/macro";
 import { getMaxScore } from "./content/questions";
@@ -7,6 +9,7 @@ const StyledProgressContainer = styled.div`
   height: 20px;
   background: #ffefdc;
   border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const fillBar = (width: number) => keyframes`
@@ -22,7 +25,7 @@ const StyledProgressFill = styled.div`
   background: linear-gradient(180deg, #f2cd38 0%, #f6e9b4 100%);
   animation: ${(props: { fraction: number }) =>
       fillBar(Math.floor(props.fraction * 100))}
-    1s ease-in forwards;
+    0.5s ease-in forwards;
   height: 100%;
   border-radius: 10px;
 `;
