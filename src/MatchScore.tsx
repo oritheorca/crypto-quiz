@@ -37,7 +37,7 @@ const StyledMatchScore = styled.p`
 `;
 
 export default function MatchScore({ score }: { score: number }) {
-  const fraction = score / getMaxScore();
+  const fraction = Math.min(1, score / getMaxScore());
   return (
     <div>
       <StyledProgressContainer>

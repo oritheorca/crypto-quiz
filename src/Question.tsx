@@ -50,17 +50,17 @@ const StyledAnswer = styled.button`
   border: none;
   display: flex;
   align-items: center;
-  padding: 2rem 3rem;
+  padding: 2rem 3.6rem;
   margin-bottom: 2rem;
   background: ${(props: StyledAnswerProps) =>
     props.isSelected ? "white" : props.fill};
-  border: 4px solid ${(props: StyledAnswerProps) => props.fill};
   opacity: ${(props: StyledAnswerProps) => (props.isNotSelected ? 0 : 1)};
   ${buttonBoxShadow}
   ${buttonWithHover}
   transition: box-shadow .25s ease, transform .25s ease, background-color 0.3s ease-in, opacity 0.5s ease-out;
 
-  &:hover {
+  &:hover,
+  &:active {
     color: ${(props: StyledAnswerProps) =>
       props.isSelected ? props.hoverFill : "white"};
   }
@@ -118,11 +118,16 @@ export function QNA({
   }
 
   function onClickAnswer(idx: number, points: number) {
-    setSelectedIdx(idx);
-    setTimeout(() => {
-      onAnswer(points);
-      setSelectedIdx(undefined);
-    }, 800);
+    // Do nothing if an index is already selected,
+    // so the user cannot select an answer twice
+    // during the resulting animation
+    if (!selectedIdx) {
+      setSelectedIdx(idx);
+      setTimeout(() => {
+        onAnswer(points);
+        setSelectedIdx(undefined);
+      }, 800);
+    }
   }
 
   return (
@@ -135,6 +140,7 @@ export function QNA({
           fill={Object.values(colors)[idx]}
           hoverFill={Object.values(colors)[idx + 4]}
           isSelected={idx === selectedIdx}
+          disabled={selectedIdx !== undefined}
           isNotSelected={selectedIdx !== undefined && idx !== selectedIdx}
         >
           <StyledLetter

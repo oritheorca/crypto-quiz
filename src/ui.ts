@@ -1,3 +1,5 @@
+/** @format */
+
 export const colors: { [color: string]: string } = {
   red: "#EE002A",
   blue: "#005FB0",
@@ -35,7 +37,7 @@ export const buttonWithHover = `
   transition: box-shadow .25s ease, transform .25s ease;
 
   &:hover {
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5), inset 0px 0px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5), inset 0px 0px 24px rgba(0, 0, 0, 0.2);
     transform: translate3d(0,-3px,0);
   }
 `;
