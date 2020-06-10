@@ -41,6 +41,7 @@ const StyledSvg = styled.svg`
   position: relative;
   left: ${() => Math.random() * 200 - 200}px;
   top: ${() => Math.random() * 200 - 200}px;
+  transform: scale(1.2);
 `;
 
 const StyledGroup = styled.g`
@@ -56,8 +57,19 @@ const StyledPath = styled.path`
 `;
 
 export function ShapePath({ d, fill }: { d: string; fill: string }) {
-  return <StyledPath d={d} fill={fill} scaleFactor={Math.random() + 0.5} />;
+  return (
+    <StyledPath d={d} fill={fill} scaleFactor={Math.random() * 0.5 + 0.5} />
+  );
 }
+
+const Shape1 = ({ useColor }: { useColor: boolean }) => (
+  <StyledSvg width="150" height="143" viewBox="0 0 150 143" fill="none">
+    <ShapePath
+      d="M24.1528 107.43L11.2254 36.9869L41.5 68.7077L77 36.9869L88 79.284L135.225 61.4869L98.7246 120.487L61.4387 113.959L24.1528 107.43Z"
+      fill={useColor ? "#f00021" : "gray"}
+    />
+  </StyledSvg>
+);
 
 const Shape2 = ({ useColor }: { useColor: boolean }) => (
   <StyledSvg width="153" height="137" viewBox="0 0 153 137" fill="none">
@@ -104,6 +116,33 @@ const Shape6 = ({ useColor }: { useColor: boolean }) => (
   </StyledSvg>
 );
 
+const Shape7 = ({ useColor }: { useColor: boolean }) => (
+  <StyledSvg fill="none" width="153" height="151" viewBox="0 0 153 151">
+    <ShapePath
+      d="M26.9282 115.444L101.5 128.5L138.001 69.5001L87.2923 9.68849L14.0007 45.0001L26.9282 115.444Z"
+      fill={useColor ? "#f00021" : "gray"}
+    />
+  </StyledSvg>
+);
+
+const Shape8 = ({ useColor }: { useColor: boolean }) => (
+  <StyledSvg fill="none" width="190" height="155" viewBox="0 0 190 155">
+    <ShapePath
+      d="M0.500293 56.5L61.5 110.5L189.999 98.4999L120.501 35.9999L0.500293 56.5Z"
+      fill={useColor ? "#f00021" : "gray"}
+    />
+  </StyledSvg>
+);
+
+const Shape9 = ({ useColor }: { useColor: boolean }) => (
+  <StyledSvg width="125" height="110" viewBox="0 0 125 110" fill="none">
+    <ShapePath
+      d="M0.225063 0.986813L38 109.5L124.225 25.4868L59.5 25.4868L0.225063 0.986813Z"
+      fill={useColor ? "#f00021" : "gray"}
+    />
+  </StyledSvg>
+);
+
 export default function VectorShapes({
   useColor = false,
 }: {
@@ -129,7 +168,17 @@ export default function VectorShapes({
     return () => window.removeEventListener("resize", drawShapes);
   }, []);
 
-  const shapes = [Shape2, Shape3, Shape4, Shape5, Shape6];
+  const shapes = [
+    Shape1,
+    Shape2,
+    Shape3,
+    Shape4,
+    Shape5,
+    Shape6,
+    Shape7,
+    Shape8,
+    Shape9,
+  ];
 
   return (
     <StyledShapes>

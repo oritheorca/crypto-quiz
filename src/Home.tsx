@@ -4,6 +4,7 @@ import React from "react";
 import ReactGA from "react-ga";
 import styled from "styled-components/macro";
 import { coinIllos } from "./content/coinImages";
+import Crossfade from "./Crossfade";
 import { buttonBoxShadow, buttonWithHover, colors } from "./ui";
 
 const StyledWelcomeContainer = styled.div`
@@ -50,10 +51,6 @@ const StyledImg = styled.img`
   transform: scale(0.9);
   display: none;
 
-  &:first-child {
-    display: block;
-  }
-
   @media (min-width: 800px) {
     display: block;
   }
@@ -71,6 +68,7 @@ export default function Home({ startGame }: { startGame: () => void }) {
       <StyledWelcome>Crypto High Presents...</StyledWelcome>
       <StyledHeader>Which cryptocurrency are you?</StyledHeader>
       <StyledImages>
+        <Crossfade />
         <Silhouette coin="Binance Coin" height={215} />
         <Silhouette coin="Ethereum" height={227} />
         <Silhouette coin="Dogecoin" height={250} />
