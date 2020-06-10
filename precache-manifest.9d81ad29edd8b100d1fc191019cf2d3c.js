@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6db6a39348bf17bd2d2dd254ce901286",
+    "revision": "95812913c42434fe705147c540416622",
     "url": "/crypto-quiz/index.html"
   },
   {
-    "revision": "51c24873540d0edef3f0",
+    "revision": "0a9d06e36d0912779601",
     "url": "/crypto-quiz/static/css/main.1ea9fcda.chunk.css"
   },
   {
-    "revision": "725417ea868fe790de14",
-    "url": "/crypto-quiz/static/js/2.2f980003.chunk.js"
+    "revision": "1e32babdb4452d6ce843",
+    "url": "/crypto-quiz/static/js/2.1e8a50b8.chunk.js"
   },
   {
     "revision": "aca8f8fc88948883037dd6367532578e",
-    "url": "/crypto-quiz/static/js/2.2f980003.chunk.js.LICENSE.txt"
+    "url": "/crypto-quiz/static/js/2.1e8a50b8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "51c24873540d0edef3f0",
-    "url": "/crypto-quiz/static/js/main.4174b4f9.chunk.js"
+    "revision": "0a9d06e36d0912779601",
+    "url": "/crypto-quiz/static/js/main.d1ee6534.chunk.js"
   },
   {
     "revision": "c4ff8b468789a09a0f54",
