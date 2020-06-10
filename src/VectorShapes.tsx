@@ -16,12 +16,12 @@ const spin = keyframes`
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    top: -19%;
+    margin-bottom: -2%;
   }
 
   to {
     opacity: 1;
-    top: -20%;
+    margin-bottom: 0;
   }
 `;
 
@@ -32,16 +32,15 @@ const StyledShapes = styled.section`
   left: -20%;
   top: -20%;
   z-index: -1;
-  animation: ${fadeIn} 0.5s linear forwards;
 `;
 
 const StyledSvg = styled.svg`
-  animation: ${spin} 20s infinite linear;
+  animation: ${spin} 20s infinite linear, ${fadeIn} 0.5s linear;
   padding: 4rem;
   position: relative;
-  left: ${() => Math.random() * 200 - 200}px;
-  top: ${() => Math.random() * 200 - 200}px;
-  transform: scale(1.2);
+  left: ${() => Math.random() * 200 - 100}px;
+  top: ${() => Math.random() * 200 - 100}px;
+  overflow: visible;
 `;
 
 const StyledGroup = styled.g`
@@ -57,9 +56,7 @@ const StyledPath = styled.path`
 `;
 
 export function ShapePath({ d, fill }: { d: string; fill: string }) {
-  return (
-    <StyledPath d={d} fill={fill} scaleFactor={Math.random() * 0.5 + 0.5} />
-  );
+  return <StyledPath d={d} fill={fill} scaleFactor={Math.random() + 0.5} />;
 }
 
 const Shape1 = ({ useColor }: { useColor: boolean }) => (
